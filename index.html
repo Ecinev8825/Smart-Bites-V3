@@ -332,6 +332,13 @@
                 line-height: 1.6;
             }
 
+            .meal-score {
+                margin-top: 15px;
+                font-size: 17px;
+                font-weight: bold;
+                color: #315c43;
+            }
+
             /* ================= ABOUT ================= */
 
             .about {
@@ -581,8 +588,8 @@
                     </h2>
 
                     <p>
-                        Choose foods from each category and see
-                        what Smart Bites thinks about your meal.
+                        Choose one option from each category and
+                        see how balanced your meal is.
                     </p>
 
                 </div>
@@ -590,7 +597,7 @@
 
                 <div class="meal-options">
 
-                    <!-- CARBOHYDRATE -->
+                    <!-- MAIN FOOD -->
 
                     <div class="meal-choice">
 
@@ -604,8 +611,12 @@
                                 Select one...
                             </option>
 
+                            <option value="brownrice">
+                                Brown rice
+                            </option>
+
                             <option value="rice">
-                                Rice
+                                White rice
                             </option>
 
                             <option value="bread">
@@ -618,6 +629,10 @@
 
                             <option value="pasta">
                                 Pasta
+                            </option>
+
+                            <option value="instantnoodles">
+                                Instant noodles
                             </option>
 
                         </select>
@@ -640,7 +655,7 @@
                             </option>
 
                             <option value="chicken">
-                                Chicken
+                                Grilled chicken
                             </option>
 
                             <option value="fish">
@@ -655,39 +670,59 @@
                                 Tofu
                             </option>
 
+                            <option value="friedchicken">
+                                Fried chicken
+                            </option>
+
+                            <option value="processedmeat">
+                                Processed meat
+                            </option>
+
                         </select>
 
                     </div>
 
 
-                    <!-- FRUIT / VEGETABLE -->
+                    <!-- SIDE -->
 
                     <div class="meal-choice">
 
                         <h3>
-                            🥦 Add a fruit or vegetable
+                            🥗 Choose a side
                         </h3>
 
-                        <select id="produce">
+                        <select id="side">
 
                             <option value="">
                                 Select one...
                             </option>
 
-                            <option value="banana">
-                                Banana
-                            </option>
-
-                            <option value="apple">
-                                Apple
+                            <option value="broccoli">
+                                Steamed broccoli
                             </option>
 
                             <option value="carrots">
                                 Carrots
                             </option>
 
-                            <option value="broccoli">
-                                Broccoli
+                            <option value="salad">
+                                Side salad
+                            </option>
+
+                            <option value="apple">
+                                Apple
+                            </option>
+
+                            <option value="fries">
+                                French fries
+                            </option>
+
+                            <option value="chips">
+                                Potato chips
+                            </option>
+
+                            <option value="cheesyfries">
+                                Cheesy fries
                             </option>
 
                         </select>
@@ -725,6 +760,14 @@
                                 Soda
                             </option>
 
+                            <option value="energydrink">
+                                Energy drink
+                            </option>
+
+                            <option value="milktea">
+                                Sweetened milk tea
+                            </option>
+
                         </select>
 
                     </div>
@@ -751,8 +794,12 @@
                         Your Smart Bites Result
                     </h3>
 
-                    <p id="resultText">
-                    </p>
+                    <p id="resultText"></p>
+
+                    <div
+                        class="meal-score"
+                        id="mealScore"
+                    ></div>
 
                 </div>
 
@@ -806,8 +853,8 @@
                 const protein =
                     document.getElementById("protein").value;
 
-                const produce =
-                    document.getElementById("produce").value;
+                const side =
+                    document.getElementById("side").value;
 
                 const drink =
                     document.getElementById("drink").value;
@@ -822,6 +869,9 @@
                 const resultText =
                     document.getElementById("resultText");
 
+                const mealScore =
+                    document.getElementById("mealScore");
+
 
                 /*
                     Make sure the user chooses
@@ -831,7 +881,7 @@
                 if (
                     mainFood === "" ||
                     protein === "" ||
-                    produce === "" ||
+                    side === "" ||
                     drink === ""
                 ) {
 
@@ -839,81 +889,177 @@
                         "⚠️ Almost there!";
 
                     resultText.textContent =
-                        "Please choose one option from each category before checking your meal.";
+                        "Choose something from every category before checking your meal.";
+
+                    mealScore.textContent = "";
 
                     result.style.backgroundColor =
                         "#fff3cd";
 
                     result.classList.add("show");
 
+                    result.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
                     return;
                 }
 
 
                 /*
-                    Start with a score of zero.
+                    HEALTH SCORES
+
+                    Healthy choices = 2 points
+                    Okay choices = 1 point
+                    Less healthy choices = 0 points
                 */
 
-                let score = 0;
+                const mainScores = {
+
+                    brownrice: 2,
+                    bread: 2,
+                    oatmeal: 2,
+
+                    rice: 1,
+                    pasta: 1,
+
+                    instantnoodles: 0
+
+                };
+
+
+                const proteinScores = {
+
+                    chicken: 2,
+                    fish: 2,
+                    tofu: 2,
+
+                    egg: 1,
+
+                    friedchicken: 0,
+                    processedmeat: 0
+
+                };
+
+
+                const sideScores = {
+
+                    broccoli: 2,
+                    carrots: 2,
+                    salad: 2,
+                    apple: 2,
+
+                    fries: 0,
+                    chips: 0,
+                    cheesyfries: 0
+
+                };
+
+
+                const drinkScores = {
+
+                    water: 2,
+
+                    milk: 1,
+                    juice: 1,
+
+                    soda: 0,
+                    energydrink: 0,
+                    milktea: 0
+
+                };
+
+
+                const score =
+                    mainScores[mainFood] +
+                    proteinScores[protein] +
+                    sideScores[side] +
+                    drinkScores[drink];
 
 
                 /*
-                    Every food group adds points.
+                    Give the user suggestions
+                    based on their choices.
                 */
 
-                score += 1;
-                score += 1;
-                score += 1;
+                let suggestions = [];
 
 
-                /*
-                    Water gets an extra point.
-                */
+                if (mainScores[mainFood] === 0) {
 
-                if (drink === "water") {
+                    suggestions.push(
+                        "Try switching your main food to oatmeal, brown rice, or whole-grain bread."
+                    );
 
-                    score += 1;
+                }
+
+
+                if (proteinScores[protein] === 0) {
+
+                    suggestions.push(
+                        "Try grilled chicken, fish, or tofu instead of a highly processed or fried option."
+                    );
+
+                }
+
+
+                if (sideScores[side] === 0) {
+
+                    suggestions.push(
+                        "Try adding a fruit, salad, or vegetable as your side."
+                    );
+
+                }
+
+
+                if (drinkScores[drink] === 0) {
+
+                    suggestions.push(
+                        "Water is a simple choice to make your meal healthier."
+                    );
 
                 }
 
 
                 /*
-                    Milk can also be a reasonable
-                    drink choice.
+                    Different results depending
+                    on the final score.
                 */
 
-                if (drink === "milk") {
-
-                    score += 1;
-
-                }
-
-
-                /*
-                    Show different messages
-                    depending on the result.
-                */
-
-                if (score === 4) {
+                if (score >= 7) {
 
                     resultTitle.textContent =
-                        "🟢 Great choice!";
+                        "🌟 Excellent choice!";
 
                     resultText.textContent =
-                        "Your meal includes a good variety of food groups. You have a main food, protein, fruit or vegetable, and a smart drink choice. Keep it up!";
+                        "Your meal has a great balance of different food groups and several nutritious choices.";
 
                     result.style.backgroundColor =
                         "#dcebdc";
 
                 }
 
-                else if (score === 3) {
+                else if (score >= 5) {
 
                     resultTitle.textContent =
-                        "🟡 Pretty good!";
+                        "🟢 Great meal!";
 
                     resultText.textContent =
-                        "Your meal has a good variety of foods. For an even smarter choice, consider choosing water or another nutritious drink.";
+                        "You made several smart choices. A small change could make your meal even better.";
+
+                    result.style.backgroundColor =
+                        "#e5f1df";
+
+                }
+
+                else if (score >= 3) {
+
+                    resultTitle.textContent =
+                        "🟡 Not bad!";
+
+                    resultText.textContent =
+                        "Your meal has some good choices, but there are a few things you could improve.";
 
                     result.style.backgroundColor =
                         "#fff3cd";
@@ -923,10 +1069,10 @@
                 else {
 
                     resultTitle.textContent =
-                        "🟠 Good start!";
+                        "🟠 Let's improve it!";
 
                     resultText.textContent =
-                        "You have the basics of a meal. Try adding more variety and choosing water more often.";
+                        "This meal has some less nutritious choices. Don't worry — even changing one item can make a difference.";
 
                     result.style.backgroundColor =
                         "#ffe0b2";
@@ -935,14 +1081,41 @@
 
 
                 /*
-                    Make the result visible.
+                    Display the score.
+                */
+
+                mealScore.textContent =
+                    "Smart Bites Score: " + score + " / 8";
+
+
+                /*
+                    Add personalized suggestions.
+                */
+
+                if (suggestions.length > 0) {
+
+                    resultText.textContent +=
+                        " " + suggestions.join(" ");
+
+                }
+
+                else {
+
+                    resultText.textContent +=
+                        " You made some really smart choices!";
+
+                }
+
+
+                /*
+                    Show the result.
                 */
 
                 result.classList.add("show");
 
 
                 /*
-                    Smoothly scroll to the result.
+                    Scroll to the result.
                 */
 
                 result.scrollIntoView({
