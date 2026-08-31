@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8" />
+
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+
+        <title>About | Smart Bites</title>
+
+
+        <style>
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+
+            body {
+                font-family:
+                    "Segoe UI",
+                    Tahoma,
+                    Geneva,
+                    Verdana,
+                    sans-serif;
+
+                background-color: #f3f1e8;
+
+                color: #26352b;
+            }
+
+
+            /* ================= HEADER ================= */
+
+            header {
+                background-color: #315c43;
+
+                color: white;
+
+                padding: 25px 8%;
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: space-between;
+
+                position: sticky;
+
+                top: 0;
+
+                z-index: 100;
+            }
+
+
+            .logo {
+                font-size: 28px;
+
+                font-weight: bold;
+            }
+
+
+            nav a {
+                color: white;
+
+                text-decoration: none;
+
+                margin-left: 30px;
+
+                font-weight: 600;
+
+                transition: color 0.2s;
+            }
+
+
+            nav a:hover {
+                color: #f4c95d;
+            }
+
+
+            /* ================= MAIN ================= */
+
+            main {
+                max-width: 1200px;
+
+                margin: auto;
+
+                padding: 80px 30px;
+            }
+
+
+            /* ================= INTRO ================= */
+
+            .about-intro {
+                max-width: 800px;
+
+                margin: 0 auto 80px;
+
+                text-align: center;
+            }
+
+
+            .about-label {
+                color: #6b8f71;
+
+                font-size: 13px;
+
+                font-weight: bold;
+
+                letter-spacing: 3px;
+            }
+
+
+            .about-intro h1 {
+                color: #315c43;
+
+                font-size: 50px;
+
+                margin: 15px 0 20px;
+            }
+
+
+            .about-intro p {
+                color: #59655c;
+
+                font-size: 18px;
+
+                line-height: 1.7;
+            }
+
+
+            /* ================= GOAL ================= */
+
+            .goal {
+                background-color: #315c43;
+
+                color: white;
+
+                border-radius: 25px;
+
+                padding: 50px;
+
+                max-width: 900px;
+
+                margin: 0 auto 90px;
+
+                text-align: center;
+            }
+
+
+            .goal h2 {
+                font-size: 32px;
+
+                margin-bottom: 15px;
+            }
+
+
+            .goal p {
+                font-size: 18px;
+
+                line-height: 1.6;
+            }
+
+
+            /* ================= TEAM ================= */
+
+            .team-title {
+                text-align: center;
+
+                color: #315c43;
+
+                font-size: 38px;
+
+                margin-bottom: 40px;
+            }
+
+
+            .team-grid {
+                max-width: 1000px;
+
+                margin: auto;
+
+                display: grid;
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+                gap: 25px;
+            }
+
+
+            .member {
+                background-color: white;
+
+                border-radius: 18px;
+
+                padding: 30px 20px;
+
+                text-align: center;
+
+                box-shadow:
+                    0 5px 18px
+                    rgba(0, 0, 0, 0.08);
+
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.2s;
+            }
+
+
+            .member:hover {
+                transform: translateY(-6px);
+
+                box-shadow:
+                    0 10px 25px
+                    rgba(0, 0, 0, 0.12);
+            }
+
+
+            .member-image {
+                width: 100px;
+
+                height: 100px;
+
+                margin: 0 auto 18px;
+
+                background-color: #dcebdc;
+
+                border-radius: 50%;
+
+                display: flex;
+
+                align-items: center;
+
+                justify-content: center;
+
+                font-size: 45px;
+            }
+
+
+            .member h3 {
+                color: #315c43;
+
+                margin-bottom: 7px;
+
+                font-size: 20px;
+            }
+
+
+            .member p {
+                color: #6b8f71;
+
+                font-size: 14px;
+            }
+
+
+            /* ================= FOOTER ================= */
+
+            footer {
+                margin-top: 50px;
+
+                padding: 30px;
+
+                background-color: #24352a;
+
+                color: white;
+
+                text-align: center;
+            }
+
+
+            /* ================= MOBILE ================= */
+
+            @media (max-width: 800px) {
+
+                header {
+                    flex-direction: column;
+
+                    gap: 15px;
+                }
+
+
+                nav a {
+                    margin: 0 8px;
+                }
+
+
+                .about-intro h1 {
+                    font-size: 40px;
+                }
+
+
+                .team-grid {
+                    grid-template-columns: 1fr;
+                }
+
+            }
+
+        </style>
+
+    </head>
+
+
+    <body>
+
+
+        <!-- ================= HEADER ================= -->
+
+        <header>
+
+            <div class="logo">
+                ✨ Smart Bites ✨
+            </div>
+
+
+            <nav>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+
+                <a href="index.html#topics">
+                    Explore
+                </a>
+
+
+                <a href="about.html">
+                    About
+                </a>
+
+            </nav>
+
+        </header>
+
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <main>
+
+
+            <!-- ABOUT INTRO -->
+
+            <section class="about-intro">
+
+                <span class="about-label">
+                    ABOUT SMART BITES
+                </span>
+
+
+                <h1>
+                    What is Smart Bites?
+                </h1>
+
+
+                <p>
+                    Smart Bites was created to provide
+                    accessible information about healthy
+                    eating and help people understand how
+                    everyday food choices can affect their
+                    health in a way they can comprehend
+                    easier.
+                </p>
+
+            </section>
+
+
+
+            <!-- OUR GOAL -->
+
+            <section class="goal">
+
+                <h2>
+                    Our Goal
+                </h2>
+
+
+                <p>
+                    We want to make information about
+                    healthy eating simple, understandable,
+                    and accessible.
+                </p>
+
+            </section>
+
+
+
+            <!-- OUR TEAM -->
+
+            <section>
+
+                <h2 class="team-title">
+                    Meet the Team
+                </h2>
+
+
+                <div class="team-grid">
+
+
+                    <!-- MEMBER 1 -->
+
+                    <div class="member">
+
+                        <div class="member-image">
+                            👤
+                        </div>
+
+                        <h3>
+                            Member 1
+                        </h3>
+
+                        <p>
+                            Role
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- MEMBER 2 -->
+
+                    <div class="member">
+
+                        <div class="member-image">
+                            👤
+                        </div>
+
+                        <h3>
+                            Member 2
+                        </h3>
+
+                        <p>
+                            Role
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- MEMBER 3 -->
+
+                    <div class="member">
+
+                        <div class="member-image">
+                            👤
+                        </div>
+
+                        <h3>
+                            Member 3
+                        </h3>
+
+                        <p>
+                            Role
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- MEMBER 4 -->
+
+                    <div class="member">
+
+                        <div class="member-image">
+                            👤
+                        </div>
+
+                        <h3>
+                            Member 4
+                        </h3>
+
+                        <p>
+                            Role
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- MEMBER 5 -->
+
+                    <div class="member">
+
+                        <div class="member-image">
+                            👤
+                        </div>
+
+                        <h3>
+                            Member 5
+                        </h3>
+
+                        <p>
+                            Role
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- MEMBER 6 -->
+
+                    <div class="member">
+
+                        <div class="member-image">
+                            👤
+                        </div>
+
+                        <h3>
+                            Member 6
+                        </h3>
+
+                        <p>
+                            Role
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- MEMBER 7 -->
+
+                    <div class="member">
+
+                        <div class="member-image">
+                            👤
+                        </div>
+
+                        <h3>
+                            Member 7
+                        </h3>
+
+                        <p>
+                            Role
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- MEMBER 8 -->
+
+                    <div class="member">
+
+                        <div class="member-image">
+                            👤
+                        </div>
+
+                        <h3>
+                            Member 8
+                        </h3>
+
+                        <p>
+                            Role
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- MEMBER 9 -->
+
+                    <div class="member">
+
+                        <div class="member-image">
+                            👤
+                        </div>
+
+                        <h3>
+                            Member 9
+                        </h3>
+
+                        <p>
+                            Role
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <p>
+                © 2026 Smart Bites
+            </p>
+
+        </footer>
+
+
+    </body>
+</html>

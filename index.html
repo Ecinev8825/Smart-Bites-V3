@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Smart Bites</title>
+
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f3f1e8;
+                color: #26352b;
+            }
+
+            /* ================= HEADER ================= */
+
+            header {
+                background-color: #315c43;
+                color: white;
+                padding: 25px 8%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+
+            .logo {
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                margin-left: 30px;
+                font-weight: 600;
+                transition: color 0.2s;
+            }
+
+            nav a:hover {
+                color: #f4c95d;
+            }
+
+            /* ================= HERO ================= */
+
+            .hero {
+                max-width: 1200px;
+                margin: 50px auto;
+                padding: 70px 60px;
+
+                background-color: #dcebdc;
+                border-radius: 25px;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 50px;
+            }
+
+            .hero-text {
+                max-width: 600px;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+                margin-bottom: 20px;
+                color: #315c43;
+            }
+
+            .hero p {
+                font-size: 20px;
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+
+            .hero-button {
+                display: inline-block;
+                padding: 14px 24px;
+                background-color: #315c43;
+                color: white;
+                text-decoration: none;
+                border-radius: 10px;
+                font-weight: bold;
+            }
+
+            .hero-button:hover {
+                background-color: #244732;
+            }
+
+            .hero-image {
+                width: 300px;
+                height: 300px;
+
+                background-color: #b7d4b8;
+                border-radius: 50%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                font-size: 100px;
+            }
+
+            /* ================= SECTION ================= */
+
+            .section {
+                max-width: 1200px;
+                margin: 70px auto;
+                padding: 0 30px;
+            }
+
+            .section-title {
+                text-align: center;
+                font-size: 35px;
+                margin-bottom: 40px;
+                color: #315c43;
+            }
+
+            /* ================= CARDS ================= */
+
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
+
+            .card {
+                background-color: white;
+                border-radius: 18px;
+                overflow: hidden;
+
+                box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+
+                transition: transform 0.2s;
+            }
+
+            .card:hover {
+                transform: translateY(-6px);
+            }
+
+            .card-image {
+                height: 180px;
+
+                background-color: #c9dfc9;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                font-size: 70px;
+            }
+
+            .card-content {
+                padding: 25px;
+            }
+
+            .card h3 {
+                color: #315c43;
+                margin-bottom: 10px;
+                font-size: 22px;
+            }
+
+            .card p {
+                line-height: 1.6;
+                color: #59655c;
+            }
+
+            .card-button {
+                display: inline-block;
+                margin-top: 18px;
+
+                color: #315c43;
+                text-decoration: none;
+
+                font-weight: bold;
+            }
+
+            /* ================= MEAL BUILDER ================= */
+
+            .meal-builder {
+                max-width: 1000px;
+                margin: 80px auto;
+                padding: 45px;
+
+                background-color: white;
+                border-radius: 25px;
+
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            }
+
+            .meal-builder-header {
+                text-align: center;
+                margin-bottom: 35px;
+            }
+
+            .meal-builder-header span {
+                color: #6b8f71;
+                font-size: 13px;
+                font-weight: bold;
+                letter-spacing: 3px;
+            }
+
+            .meal-builder-header h2 {
+                color: #315c43;
+                font-size: 35px;
+                margin: 10px 0;
+            }
+
+            .meal-builder-header p {
+                color: #59655c;
+                line-height: 1.6;
+            }
+
+            .meal-options {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .meal-choice {
+                background-color: #edf3e9;
+                padding: 25px;
+                border-radius: 18px;
+            }
+
+            .meal-choice h3 {
+                color: #315c43;
+                margin-bottom: 12px;
+            }
+
+            .meal-choice select {
+                width: 100%;
+                padding: 13px;
+
+                border: 2px solid #c9dfc9;
+                border-radius: 10px;
+
+                background-color: white;
+                color: #26352b;
+
+                font-size: 15px;
+                font-family: inherit;
+
+                cursor: pointer;
+            }
+
+            .meal-choice select:focus {
+                outline: none;
+                border-color: #315c43;
+            }
+
+            .check-meal {
+                display: block;
+                margin: 30px auto 0;
+
+                padding: 15px 30px;
+
+                border: none;
+                border-radius: 10px;
+
+                background-color: #315c43;
+                color: white;
+
+                font-size: 16px;
+                font-weight: bold;
+
+                font-family: inherit;
+
+                cursor: pointer;
+
+                transition:
+                    background-color 0.2s,
+                    transform 0.2s;
+            }
+
+            .check-meal:hover {
+                background-color: #244732;
+                transform: translateY(-2px);
+            }
+
+            .meal-result {
+                display: none;
+
+                margin-top: 30px;
+                padding: 25px;
+
+                border-radius: 15px;
+
+                background-color: #dcebdc;
+
+                text-align: center;
+            }
+
+            .meal-result.show {
+                display: block;
+                animation: resultAppear 0.3s ease;
+            }
+
+            @keyframes resultAppear {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .meal-result h3 {
+                color: #315c43;
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+
+            .meal-result p {
+                color: #536057;
+                line-height: 1.6;
+            }
+
+            /* ================= ABOUT ================= */
+
+            .about {
+                background-color: #315c43;
+                color: white;
+
+                border-radius: 25px;
+                padding: 50px;
+
+                text-align: center;
+            }
+
+            .about h2 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            .about p {
+                max-width: 750px;
+                margin: auto;
+                line-height: 1.7;
+                font-size: 17px;
+            }
+
+            /* ================= FOOTER ================= */
+
+            footer {
+                margin-top: 80px;
+                padding: 30px;
+
+                background-color: #24352a;
+                color: white;
+
+                text-align: center;
+            }
+
+            /* ================= MOBILE ================= */
+
+            @media (max-width: 800px) {
+                header {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                nav a {
+                    margin: 0 8px;
+                }
+
+                .hero {
+                    flex-direction: column;
+                    text-align: center;
+                    padding: 50px 25px;
+                }
+
+                .hero h1 {
+                    font-size: 42px;
+                }
+
+                .hero-image {
+                    width: 220px;
+                    height: 220px;
+                    font-size: 75px;
+                }
+
+                .cards {
+                    grid-template-columns: 1fr;
+                }
+
+                .meal-options {
+                    grid-template-columns: 1fr;
+                }
+
+                .meal-builder {
+                    padding: 30px 20px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- ================= HEADER ================= -->
+
+        <header>
+            <div class="logo">✨ Smart Bites ✨</div>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#topics">Explore</a>
+                <a href="about.html">About</a>
+            </nav>
+        </header>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <h1>
+                    Eat better.<br />
+                    Feel better.
+                </h1>
+
+                <p>
+                    Smart Bites provides simple information about
+                    healthy foods, eating habits, and making better
+                    choices for your health.
+                </p>
+
+                <a href="#topics" class="hero-button">
+                    Explore Smart Bites →
+                </a>
+
+            </div>
+
+            <div class="hero-image">
+                🥗
+            </div>
+
+        </section>
+
+
+        <!-- ================= TOPICS ================= -->
+
+        <section class="section" id="topics">
+
+            <h2 class="section-title">
+                Explore Smart Bites
+            </h2>
+
+            <div class="cards">
+
+                <!-- CARD 1 -->
+
+                <div class="card">
+
+                    <div class="card-image">
+                        🥦
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            Healthy Foods and Foods to Avoid
+                        </h3>
+
+                        <p>
+                            Learn about nutritious foods like fruits
+                            and vegetables and how they can benefit
+                            your body.
+                        </p>
+
+                        <a
+                            href="healthy_foods_and_fta.html"
+                            class="card-button"
+                        >
+                            Learn more →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 2 -->
+
+                <div class="card">
+
+                    <div class="card-image">
+                        🍏
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            Healthy Tips
+                        </h3>
+
+                        <p>
+                            Discover simple tips that can help you
+                            take better care of yourself and others.
+                        </p>
+
+                        <a
+                            href="healthy_tips.html"
+                            class="card-button"
+                        >
+                            Learn more →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CARD 3 -->
+
+                <div class="card">
+
+                    <div class="card-image">
+                        🍱
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>
+                            Meal Ideas
+                        </h3>
+
+                        <p>
+                            Find simple and delicious meal ideas
+                            and learn about balanced food choices.
+                        </p>
+
+                        <a
+                            href="meal_ideas.html"
+                            class="card-button"
+                        >
+                            Learn more →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MEAL BUILDER ================= -->
+
+        <section class="section">
+
+            <div class="meal-builder">
+
+                <div class="meal-builder-header">
+
+                    <span>
+                        TRY IT YOURSELF
+                    </span>
+
+                    <h2>
+                        🍽️ Build Your Smart Meal
+                    </h2>
+
+                    <p>
+                        Choose foods from each category and see
+                        what Smart Bites thinks about your meal.
+                    </p>
+
+                </div>
+
+
+                <div class="meal-options">
+
+                    <!-- CARBOHYDRATE -->
+
+                    <div class="meal-choice">
+
+                        <h3>
+                            🍚 Choose a main food
+                        </h3>
+
+                        <select id="mainFood">
+
+                            <option value="">
+                                Select one...
+                            </option>
+
+                            <option value="rice">
+                                Rice
+                            </option>
+
+                            <option value="bread">
+                                Whole-grain bread
+                            </option>
+
+                            <option value="oatmeal">
+                                Oatmeal
+                            </option>
+
+                            <option value="pasta">
+                                Pasta
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- PROTEIN -->
+
+                    <div class="meal-choice">
+
+                        <h3>
+                            🍗 Choose a protein
+                        </h3>
+
+                        <select id="protein">
+
+                            <option value="">
+                                Select one...
+                            </option>
+
+                            <option value="chicken">
+                                Chicken
+                            </option>
+
+                            <option value="fish">
+                                Fish
+                            </option>
+
+                            <option value="egg">
+                                Egg
+                            </option>
+
+                            <option value="tofu">
+                                Tofu
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- FRUIT / VEGETABLE -->
+
+                    <div class="meal-choice">
+
+                        <h3>
+                            🥦 Add a fruit or vegetable
+                        </h3>
+
+                        <select id="produce">
+
+                            <option value="">
+                                Select one...
+                            </option>
+
+                            <option value="banana">
+                                Banana
+                            </option>
+
+                            <option value="apple">
+                                Apple
+                            </option>
+
+                            <option value="carrots">
+                                Carrots
+                            </option>
+
+                            <option value="broccoli">
+                                Broccoli
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- DRINK -->
+
+                    <div class="meal-choice">
+
+                        <h3>
+                            🥤 Choose a drink
+                        </h3>
+
+                        <select id="drink">
+
+                            <option value="">
+                                Select one...
+                            </option>
+
+                            <option value="water">
+                                Water
+                            </option>
+
+                            <option value="milk">
+                                Milk
+                            </option>
+
+                            <option value="juice">
+                                Fruit juice
+                            </option>
+
+                            <option value="soda">
+                                Soda
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="check-meal"
+                    onclick="checkMeal()"
+                >
+                    ✨ Check My Meal
+                </button>
+
+
+                <!-- RESULT -->
+
+                <div
+                    class="meal-result"
+                    id="mealResult"
+                >
+
+                    <h3 id="resultTitle">
+                        Your Smart Bites Result
+                    </h3>
+
+                    <p id="resultText">
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="section">
+
+            <div class="about">
+
+                <h2>
+                    Why Smart Bites?
+                </h2>
+
+                <p>
+                    Smart Bites was created to provide accessible
+                    information about healthy eating and help people
+                    understand how everyday food choices can affect
+                    their health in a way they can understand more easily.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <p>
+                © 2026 Smart Bites
+            </p>
+
+        </footer>
+
+
+        <!-- ================= JAVASCRIPT ================= -->
+
+        <script>
+
+            function checkMeal() {
+
+                const mainFood =
+                    document.getElementById("mainFood").value;
+
+                const protein =
+                    document.getElementById("protein").value;
+
+                const produce =
+                    document.getElementById("produce").value;
+
+                const drink =
+                    document.getElementById("drink").value;
+
+
+                const result =
+                    document.getElementById("mealResult");
+
+                const resultTitle =
+                    document.getElementById("resultTitle");
+
+                const resultText =
+                    document.getElementById("resultText");
+
+
+                /*
+                    Make sure the user chooses
+                    something from every category.
+                */
+
+                if (
+                    mainFood === "" ||
+                    protein === "" ||
+                    produce === "" ||
+                    drink === ""
+                ) {
+
+                    resultTitle.textContent =
+                        "⚠️ Almost there!";
+
+                    resultText.textContent =
+                        "Please choose one option from each category before checking your meal.";
+
+                    result.style.backgroundColor =
+                        "#fff3cd";
+
+                    result.classList.add("show");
+
+                    return;
+                }
+
+
+                /*
+                    Start with a score of zero.
+                */
+
+                let score = 0;
+
+
+                /*
+                    Every food group adds points.
+                */
+
+                score += 1;
+                score += 1;
+                score += 1;
+
+
+                /*
+                    Water gets an extra point.
+                */
+
+                if (drink === "water") {
+
+                    score += 1;
+
+                }
+
+
+                /*
+                    Milk can also be a reasonable
+                    drink choice.
+                */
+
+                if (drink === "milk") {
+
+                    score += 1;
+
+                }
+
+
+                /*
+                    Show different messages
+                    depending on the result.
+                */
+
+                if (score === 4) {
+
+                    resultTitle.textContent =
+                        "🟢 Great choice!";
+
+                    resultText.textContent =
+                        "Your meal includes a good variety of food groups. You have a main food, protein, fruit or vegetable, and a smart drink choice. Keep it up!";
+
+                    result.style.backgroundColor =
+                        "#dcebdc";
+
+                }
+
+                else if (score === 3) {
+
+                    resultTitle.textContent =
+                        "🟡 Pretty good!";
+
+                    resultText.textContent =
+                        "Your meal has a good variety of foods. For an even smarter choice, consider choosing water or another nutritious drink.";
+
+                    result.style.backgroundColor =
+                        "#fff3cd";
+
+                }
+
+                else {
+
+                    resultTitle.textContent =
+                        "🟠 Good start!";
+
+                    resultText.textContent =
+                        "You have the basics of a meal. Try adding more variety and choosing water more often.";
+
+                    result.style.backgroundColor =
+                        "#ffe0b2";
+
+                }
+
+
+                /*
+                    Make the result visible.
+                */
+
+                result.classList.add("show");
+
+
+                /*
+                    Smoothly scroll to the result.
+                */
+
+                result.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }
+
+        </script>
+
+    </body>
+</html>
