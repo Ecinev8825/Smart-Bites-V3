@@ -414,6 +414,18 @@
                 color: #536057;
             }
 
+            nav a {
+                color: #26352b;
+                text-decoration: none;
+                margin-left: 30px;
+                font-weight: 600;
+                transition: color 0.2s;
+            }
+
+            nav a:hover {
+                color: #dcebdc;
+            }
+
             /* =========================
                3-DAY STREAK
             ========================= */
@@ -760,15 +772,12 @@
 
     <body>
         <main class="book">
-
             <!-- =====================================================
                  PAGE 1 — COVER
             ====================================================== -->
 
             <section class="page active" id="page0">
-
                 <div class="cover">
-
                     <div class="cover-decoration top-left">🥬</div>
 
                     <div class="cover-decoration top-right">🍎</div>
@@ -798,413 +807,241 @@
                     <div class="cover-bowl">🥗</div>
 
                     <p class="cover-group">CAPSTONE • GROUP 5</p>
-
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  PAGE 2 — INTRODUCTION
             ====================================================== -->
 
             <section class="page" id="page1">
-
                 <div class="page-header">
-
-                    <span class="page-category">
-                        SMART BITES
-                    </span>
+                    <span class="page-category"> SMART BITES </span>
 
                     <h1>Why is being healthy important?</h1>
-
                 </div>
 
                 <div class="page-content">
-
-                    <div class="illustration">
-                        🥗
-                    </div>
+                    <div class="illustration">🥗</div>
 
                     <div class="info-box">
-
                         <h3>Benefits</h3>
 
-                        <p>
-                            It improves your mental and physical health.
-                            It also reduces the chances of sickness.
-                        </p>
-
+                        <p>It improves your mental and physical health. It also reduces the chances of sickness.</p>
                     </div>
-
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  PAGE 3 — HEALTHY TIPS
             ====================================================== -->
 
             <section class="page" id="page2">
-
                 <div class="page-header">
-
-                    <span class="page-category">
-                        HEALTHY TIPS
-                    </span>
+                    <span class="page-category"> HEALTHY TIPS </span>
 
                     <h1>Healthy Tips</h1>
-
                 </div>
 
                 <div class="food-grid">
-
                     <div class="food-item">
-
-                        <div class="food-icon">
-                            🥦
-                        </div>
+                        <div class="food-icon">🥦</div>
 
                         <h3>Eat Healthy Foods</h3>
 
                         <p>
-                            Vegetables, Fruits, and Grains can provide
-                            many important nutrients and benefits.
-                            Staying hydrated is also important.
+                            Vegetables, Fruits, and Grains can provide many important nutrients and benefits. Staying
+                            hydrated is also important.
                         </p>
-
                     </div>
 
-
                     <div class="food-item">
-
-                        <div class="food-icon">
-                            🍔
-                        </div>
+                        <div class="food-icon">🍔</div>
 
                         <h3>Limit eating fast food</h3>
 
                         <p>
-                            Although eating fast foods is okay,
-                            please limit eating it since it has an
-                            unhealthy amount of sugar and fats.
+                            Although eating fast foods is okay, please limit eating it since it has an unhealthy amount
+                            of sugar and fats.
                         </p>
-
                     </div>
 
-
                     <div class="food-item">
-
-                        <div class="food-icon">
-                            🏃‍♂️
-                        </div>
+                        <div class="food-icon">🏃‍♂️</div>
 
                         <h3>Exercise regularly</h3>
 
-                        <p>
-                            Exercising daily improves mental and
-                            physical health, and prevents illness.
-                        </p>
-
+                        <p>Exercising daily improves mental and physical health, and prevents illness.</p>
                     </div>
-
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  PAGE 4 — 3 DAY STREAK
             ====================================================== -->
 
             <section class="page" id="page3">
-
                 <div class="page-header">
-
-                    <span class="page-category">
-                        HEALTHY CHALLENGE
-                    </span>
+                    <span class="page-category"> HEALTHY CHALLENGE </span>
 
                     <h1>Build Your Healthy Streak</h1>
-
                 </div>
 
-
                 <div class="streak-container">
-
                     <div class="streak-header">
-
-                        <div class="streak-fire">
-                            🔥
-                        </div>
+                        <div class="streak-fire">🔥</div>
 
                         <h2>3-Day Healthy Streak</h2>
 
-                        <p>
-                            Complete one healthy challenge each day.
-                            Come back tomorrow to keep your streak alive!
-                        </p>
+                        <p>Complete one healthy challenge each day. Come back tomorrow to keep your streak alive!</p>
 
                         <div class="streak-count">
                             Current Streak:
                             <span id="streakCount">0</span>/3
                         </div>
-
                     </div>
 
-
                     <div class="streak-days">
-
                         <!-- DAY 1 -->
 
                         <div class="streak-day" id="day1">
-
-                            <div class="day-number">
-                                1
-                            </div>
+                            <div class="day-number">1</div>
 
                             <h3>Eat Something Healthy</h3>
 
-                            <p>
-                                Eat at least one fruit or vegetable
-                                today.
-                            </p>
+                            <p>Eat at least one fruit or vegetable today.</p>
 
-                            <button
-                                class="complete-button"
-                                id="day1Button"
-                                onclick="completeDay(1)"
-                            >
-                                I Did It!
-                            </button>
-
+                            <button class="complete-button" id="day1Button" onclick="completeDay(1)">I Did It!</button>
                         </div>
-
 
                         <!-- DAY 2 -->
 
                         <div class="streak-day" id="day2">
-
-                            <div class="day-number">
-                                2
-                            </div>
+                            <div class="day-number">2</div>
 
                             <h3>Choose Water</h3>
 
-                            <p>
-                                Drink water instead of soda or another
-                                sugary drink today.
-                            </p>
+                            <p>Drink water instead of soda or another sugary drink today.</p>
 
-                            <button
-                                class="complete-button"
-                                id="day2Button"
-                                onclick="completeDay(2)"
-                            >
-                                I Did It!
-                            </button>
-
+                            <button class="complete-button" id="day2Button" onclick="completeDay(2)">I Did It!</button>
                         </div>
-
 
                         <!-- DAY 3 -->
 
                         <div class="streak-day" id="day3">
-
-                            <div class="day-number">
-                                3
-                            </div>
+                            <div class="day-number">3</div>
 
                             <h3>Get Moving</h3>
 
-                            <p>
-                                Spend some time being physically active
-                                today.
-                            </p>
+                            <p>Spend some time being physically active today.</p>
 
-                            <button
-                                class="complete-button"
-                                id="day3Button"
-                                onclick="completeDay(3)"
-                            >
-                                I Did It!
-                            </button>
-
+                            <button class="complete-button" id="day3Button" onclick="completeDay(3)">I Did It!</button>
                         </div>
-
                     </div>
 
-
-                    <div
-                        class="streak-message"
-                        id="streakMessage"
-                    >
-                        🎉 Amazing! You completed your 3-day healthy
-                        streak! Keep making smart choices!
+                    <div class="streak-message" id="streakMessage">
+                        🎉 Amazing! You completed your 3-day healthy streak! Keep making smart choices!
                     </div>
-
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  PAGE 5 — SMART BITE
             ====================================================== -->
 
             <section class="page" id="page4">
-
                 <div class="smart-bite">
+                    <div class="smart-bite-icon">💡</div>
 
-                    <div class="smart-bite-icon">
-                        💡
-                    </div>
+                    <span> SMART BITE </span>
 
-                    <span>
-                        SMART BITE
-                    </span>
+                    <h1>Did You Know?</h1>
 
-                    <h1>
-                        Did You Know?
-                    </h1>
-
-                    <p>
-                        Bananas are berries botanically, but strawberries
-                        are not.
-                    </p>
-
+                    <p>Bananas are berries botanically, but strawberries are not.</p>
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  PAGE 6 — RECAP
             ====================================================== -->
 
             <section class="page" id="page5">
-
                 <div class="page-header">
+                    <span class="page-category"> QUICK RECAP </span>
 
-                    <span class="page-category">
-                        QUICK RECAP
-                    </span>
-
-                    <h1>
-                        What Did We Learn?
-                    </h1>
-
+                    <h1>What Did We Learn?</h1>
                 </div>
-
 
                 <div class="page-content">
-
                     <div class="info-box">
+                        <h3>🥦 Eat a variety of healthy foods</h3>
 
-                        <h3>
-                            🥦 Eat a variety of healthy foods
-                        </h3>
-
-                        <p>
-                            Different foods provide different nutrients.
-                        </p>
-
+                        <p>Different foods provide different nutrients.</p>
                     </div>
 
-
                     <div class="info-box">
+                        <h3>🍟 Avoid unhealthy foods</h3>
 
-                        <h3>
-                            🍟 Avoid unhealthy foods
-                        </h3>
-
-                        <p>
-                            Fast food contains lots of fat and sugar.
-                            It is alright to eat them, but not every day.
-                        </p>
-
+                        <p>Fast food contains lots of fat and sugar. It is alright to eat them, but not every day.</p>
                     </div>
 
-
                     <div class="info-box">
+                        <h3>💡 Remember to apply these</h3>
 
-                        <h3>
-                            💡 Remember to apply these
-                        </h3>
-
-                        <p>
-                            If we apply these tips in our everyday lives,
-                            we can enjoy life better without sickness.
-                        </p>
-
+                        <p>If we apply these tips in our everyday lives, we can enjoy life better without sickness.</p>
                     </div>
 
+                    <br />
+
+                    <nav>
+                        <a
+                            href="index.html"
+                            style="background-color: #f4c95d; padding: 10px; display: inline-block; border-radius: 8px"
+                            >Home</a
+                        >
+                    </nav>
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  NAVIGATION
             ====================================================== -->
 
             <div class="navigation">
-
-                <button onclick="previousPage()">
-                    ← Previous
-                </button>
+                <button onclick="previousPage()">← Previous</button>
 
                 <div class="page-number">
-
-                    <span id="currentPage">
-                        1
-                    </span>
+                    <span id="currentPage"> 1 </span>
 
                     /
 
-                    <span id="totalPages">
-                        6
-                    </span>
-
+                    <span id="totalPages"> 6 </span>
                 </div>
 
-                <button onclick="nextPage()">
-                    Next →
-                </button>
-
+                <button onclick="nextPage()">Next →</button>
             </div>
-
         </main>
-
 
         <!-- =========================================================
              JAVASCRIPT
         ========================================================== -->
 
         <script>
-
             /* =========================
                PAGE NAVIGATION
             ========================= */
 
             let currentPage = 0;
 
-            const pages =
-                document.querySelectorAll(".page");
+            const pages = document.querySelectorAll(".page");
 
-            const currentPageText =
-                document.getElementById("currentPage");
+            const currentPageText = document.getElementById("currentPage");
 
-            const totalPagesText =
-                document.getElementById("totalPages");
+            const totalPagesText = document.getElementById("totalPages");
 
-            totalPagesText.textContent =
-                pages.length;
-
+            totalPagesText.textContent = pages.length;
 
             function showPage(pageNumber) {
-
                 if (pageNumber < 0) {
                     pageNumber = 0;
                 }
@@ -1214,15 +1051,12 @@
                 }
 
                 pages.forEach(function (page) {
-
                     page.classList.remove("active");
-
                 });
 
                 pages[pageNumber].classList.add("active");
 
-                currentPageText.textContent =
-                    pageNumber + 1;
+                currentPageText.textContent = pageNumber + 1;
 
                 currentPage = pageNumber;
 
@@ -1230,47 +1064,31 @@
                     top: 0,
                     behavior: "smooth"
                 });
-
             }
-
 
             function nextPage() {
-
                 showPage(currentPage + 1);
-
             }
-
 
             function previousPage() {
-
                 showPage(currentPage - 1);
-
             }
 
-
-            document.addEventListener(
-                "keydown",
-                function (event) {
-
-                    if (event.key === "ArrowRight") {
-                        nextPage();
-                    }
-
-                    if (event.key === "ArrowLeft") {
-                        previousPage();
-                    }
-
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "ArrowRight") {
+                    nextPage();
                 }
-            );
 
+                if (event.key === "ArrowLeft") {
+                    previousPage();
+                }
+            });
 
             /* =========================
                3-DAY STREAK SYSTEM
             ========================= */
 
-            const STORAGE_KEY =
-                "smartBitesHealthyStreak";
-
+            const STORAGE_KEY = "smartBitesHealthyStreak";
 
             /*
                 Get today's date.
@@ -1281,24 +1099,16 @@
             */
 
             function getToday() {
-
                 const now = new Date();
 
-                const year =
-                    now.getFullYear();
+                const year = now.getFullYear();
 
-                const month =
-                    String(now.getMonth() + 1)
-                        .padStart(2, "0");
+                const month = String(now.getMonth() + 1).padStart(2, "0");
 
-                const day =
-                    String(now.getDate())
-                        .padStart(2, "0");
+                const day = String(now.getDate()).padStart(2, "0");
 
                 return `${year}-${month}-${day}`;
-
             }
-
 
             /*
                 Convert a date into a number.
@@ -1308,18 +1118,10 @@
             */
 
             function dateNumber(dateString) {
+                const parts = dateString.split("-");
 
-                const parts =
-                    dateString.split("-");
-
-                return new Date(
-                    Number(parts[0]),
-                    Number(parts[1]) - 1,
-                    Number(parts[2])
-                ).getTime();
-
+                return new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2])).getTime();
             }
-
 
             /*
                 Load saved streak information.
@@ -1329,50 +1131,34 @@
             */
 
             function getStreakData() {
-
-                const saved =
-                    localStorage.getItem(STORAGE_KEY);
+                const saved = localStorage.getItem(STORAGE_KEY);
 
                 if (!saved) {
-
                     return {
                         streak: 0,
                         lastCompletedDate: null,
                         completedDays: []
                     };
-
                 }
 
                 try {
-
                     return JSON.parse(saved);
-
                 } catch (error) {
-
                     return {
                         streak: 0,
                         lastCompletedDate: null,
                         completedDays: []
                     };
-
                 }
-
             }
-
 
             /*
                 Save streak information.
             */
 
             function saveStreakData(data) {
-
-                localStorage.setItem(
-                    STORAGE_KEY,
-                    JSON.stringify(data)
-                );
-
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
             }
-
 
             /*
                 Check whether the user missed a day.
@@ -1381,31 +1167,19 @@
             */
 
             function checkNewDay() {
-
-                const data =
-                    getStreakData();
+                const data = getStreakData();
 
                 if (!data.lastCompletedDate) {
                     return data;
                 }
 
-                const today =
-                    getToday();
+                const today = getToday();
 
-                const todayNumber =
-                    dateNumber(today);
+                const todayNumber = dateNumber(today);
 
-                const lastNumber =
-                    dateNumber(
-                        data.lastCompletedDate
-                    );
+                const lastNumber = dateNumber(data.lastCompletedDate);
 
-                const difference =
-                    Math.round(
-                        (todayNumber - lastNumber)
-                        / (1000 * 60 * 60 * 24)
-                    );
-
+                const difference = Math.round((todayNumber - lastNumber) / (1000 * 60 * 60 * 24));
 
                 /*
                     If more than one day has passed,
@@ -1416,7 +1190,6 @@
                 */
 
                 if (difference > 1) {
-
                     data.streak = 0;
 
                     data.completedDays = [];
@@ -1424,20 +1197,14 @@
                     data.lastCompletedDate = null;
 
                     saveStreakData(data);
-
                 }
-
 
                 /*
                     If a full 3-day streak was already completed,
                     allow a new streak to begin on another day.
                 */
 
-                if (
-                    data.streak >= 3 &&
-                    data.lastCompletedDate !== today
-                ) {
-
+                if (data.streak >= 3 && data.lastCompletedDate !== today) {
                     data.streak = 0;
 
                     data.completedDays = [];
@@ -1445,14 +1212,10 @@
                     data.lastCompletedDate = null;
 
                     saveStreakData(data);
-
                 }
 
-
                 return data;
-
             }
-
 
             /*
                 Complete today's challenge.
@@ -1462,13 +1225,9 @@
             */
 
             function completeDay(day) {
+                let data = checkNewDay();
 
-                let data =
-                    checkNewDay();
-
-                const today =
-                    getToday();
-
+                const today = getToday();
 
                 /*
                     Only the correct challenge for the
@@ -1479,40 +1238,24 @@
                     Day 3 requires Day 2.
                 */
 
-                const expectedDay =
-                    data.streak + 1;
-
+                const expectedDay = data.streak + 1;
 
                 if (day !== expectedDay) {
-
-                    alert(
-                        "Complete the challenges in order! Start with Day " +
-                        expectedDay +
-                        "."
-                    );
+                    alert("Complete the challenges in order! Start with Day " + expectedDay + ".");
 
                     return;
-
                 }
-
 
                 /*
                     Prevent multiple completions on
                     the same day.
                 */
 
-                if (
-                    data.lastCompletedDate === today
-                ) {
-
-                    alert(
-                        "You've already completed today's challenge! Come back tomorrow 🔥"
-                    );
+                if (data.lastCompletedDate === today) {
+                    alert("You've already completed today's challenge! Come back tomorrow 🔥");
 
                     return;
-
                 }
-
 
                 /*
                     Save the completed day.
@@ -1520,14 +1263,11 @@
 
                 data.streak++;
 
-                data.lastCompletedDate =
-                    today;
+                data.lastCompletedDate = today;
 
                 data.completedDays.push(day);
 
-
                 saveStreakData(data);
-
 
                 /*
                     Update the page.
@@ -1535,21 +1275,15 @@
 
                 updateStreakDisplay();
 
-
                 /*
                     Celebration.
                 */
 
-                const button =
-                    document.getElementById(
-                        "day" + day + "Button"
-                    );
+                const button = document.getElementById("day" + day + "Button");
 
-                button.textContent =
-                    "✓ Completed!";
+                button.textContent = "✓ Completed!";
 
                 button.disabled = true;
-
 
                 /*
                     If all three days are complete,
@@ -1557,135 +1291,73 @@
                 */
 
                 if (data.streak >= 3) {
-
-                    const message =
-                        document.getElementById(
-                            "streakMessage"
-                        );
+                    const message = document.getElementById("streakMessage");
 
                     message.classList.add("show");
 
                     createConfetti();
-
                 }
-
             }
-
 
             /*
                 Update the visual streak counter.
             */
 
             function updateStreakDisplay() {
+                const data = checkNewDay();
 
-                const data =
-                    checkNewDay();
-
-                document.getElementById(
-                    "streakCount"
-                ).textContent =
-                    data.streak;
-
+                document.getElementById("streakCount").textContent = data.streak;
 
                 /*
                     Reset all cards first.
                 */
 
-                for (
-                    let day = 1;
-                    day <= 3;
-                    day++
-                ) {
+                for (let day = 1; day <= 3; day++) {
+                    const card = document.getElementById("day" + day);
 
-                    const card =
-                        document.getElementById(
-                            "day" + day
-                        );
+                    const button = document.getElementById("day" + day + "Button");
 
-                    const button =
-                        document.getElementById(
-                            "day" + day + "Button"
-                        );
-
-
-                    card.classList.remove(
-                        "completed"
-                    );
+                    card.classList.remove("completed");
 
                     button.disabled = false;
 
-                    button.textContent =
-                        "I Did It!";
-
+                    button.textContent = "I Did It!";
                 }
-
 
                 /*
                     Mark saved days as complete.
                 */
 
-                data.completedDays.forEach(
-                    function (day) {
+                data.completedDays.forEach(function (day) {
+                    const card = document.getElementById("day" + day);
 
-                        const card =
-                            document.getElementById(
-                                "day" + day
-                            );
+                    const button = document.getElementById("day" + day + "Button");
 
-                        const button =
-                            document.getElementById(
-                                "day" + day + "Button"
-                            );
+                    card.classList.add("completed");
 
-                        card.classList.add(
-                            "completed"
-                        );
+                    button.textContent = "✓ Completed!";
 
-                        button.textContent =
-                            "✓ Completed!";
-
-                        button.disabled = true;
-
-                    }
-                );
-
+                    button.disabled = true;
+                });
 
                 /*
                     Only allow the next challenge
                     to be clicked.
                 */
 
-                const nextDay =
-                    data.streak + 1;
+                const nextDay = data.streak + 1;
 
-                for (
-                    let day = 1;
-                    day <= 3;
-                    day++
-                ) {
-
+                for (let day = 1; day <= 3; day++) {
                     if (day !== nextDay) {
+                        const button = document.getElementById("day" + day + "Button");
 
-                        const button =
-                            document.getElementById(
-                                "day" + day + "Button"
-                            );
-
-                        if (
-                            !data.completedDays.includes(day)
-                        ) {
-
+                        if (!data.completedDays.includes(day)) {
                             button.disabled = true;
 
-                            button.textContent =
-                                "Locked 🔒";
-
+                            button.textContent = "Locked 🔒";
                         }
-
                     }
-
                 }
-
 
                 /*
                     Show the final message if
@@ -1693,114 +1365,61 @@
                 */
 
                 if (data.streak >= 3) {
-
-                    document
-                        .getElementById(
-                            "streakMessage"
-                        )
-                        .classList.add("show");
-
+                    document.getElementById("streakMessage").classList.add("show");
                 }
-
             }
-
 
             /* =========================
                SIMPLE CONFETTI
             ========================= */
 
             function createConfetti() {
+                const colors = ["#315c43", "#f4c95d", "#6b8f71", "#e76f51", "#dcebdc"];
 
-                const colors = [
-                    "#315c43",
-                    "#f4c95d",
-                    "#6b8f71",
-                    "#e76f51",
-                    "#dcebdc"
-                ];
+                for (let i = 0; i < 40; i++) {
+                    const piece = document.createElement("div");
 
+                    piece.style.position = "fixed";
 
-                for (
-                    let i = 0;
-                    i < 40;
-                    i++
-                ) {
+                    piece.style.width = "8px";
 
-                    const piece =
-                        document.createElement(
-                            "div"
-                        );
+                    piece.style.height = "8px";
 
-                    piece.style.position =
-                        "fixed";
+                    piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 
-                    piece.style.width =
-                        "8px";
+                    piece.style.left = Math.random() * 100 + "vw";
 
-                    piece.style.height =
-                        "8px";
+                    piece.style.top = "-10px";
 
-                    piece.style.backgroundColor =
-                        colors[
-                            Math.floor(
-                                Math.random()
-                                * colors.length
-                            )
-                        ];
+                    piece.style.zIndex = "9999";
 
-                    piece.style.left =
-                        Math.random() * 100 + "vw";
+                    piece.style.borderRadius = "2px";
 
-                    piece.style.top =
-                        "-10px";
+                    document.body.appendChild(piece);
 
-                    piece.style.zIndex =
-                        "9999";
+                    const fall = piece.animate(
+                        [
+                            {
+                                transform: "translateY(0) rotate(0deg)",
+                                opacity: 1
+                            },
+                            {
+                                transform: "translateY(100vh) rotate(720deg)",
+                                opacity: 0
+                            }
+                        ],
+                        {
+                            duration: 1500 + Math.random() * 1500,
 
-                    piece.style.borderRadius =
-                        "2px";
-
-                    document.body.appendChild(
-                        piece
+                            easing: "cubic-bezier(.2,.8,.3,1)"
+                        }
                     );
 
-
-                    const fall =
-                        piece.animate(
-                            [
-                                {
-                                    transform:
-                                        "translateY(0) rotate(0deg)",
-                                    opacity: 1
-                                },
-                                {
-                                    transform:
-                                        "translateY(100vh) rotate(720deg)",
-                                    opacity: 0
-                                }
-                            ],
-                            {
-                                duration:
-                                    1500 +
-                                    Math.random() * 1500,
-
-                                easing:
-                                    "cubic-bezier(.2,.8,.3,1)"
-                            }
-                        );
-
-
-                    fall.onfinish =
-                        function () {
-
-                            piece.remove();
-
-                        };
-
+                    fall.onfinish = function () {
+                        piece.remove();
+                    };
                 }
-
             }
-
 
             /*
                 Load saved progress when the page opens.
@@ -1809,8 +1428,6 @@
             checkNewDay();
 
             updateStreakDisplay();
-
         </script>
-
     </body>
 </html>
