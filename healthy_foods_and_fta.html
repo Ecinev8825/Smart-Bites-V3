@@ -361,6 +361,50 @@
             }
 
             /* =========================
+   HOME BUTTON
+========================= */
+
+            .home-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+
+                padding: 13px 25px;
+
+                background-color: #315c43;
+                color: white;
+
+                text-decoration: none;
+
+                border-radius: 12px;
+
+                font-size: 16px;
+                font-weight: bold;
+
+                box-shadow: 0 5px 12px rgba(49, 92, 67, 0.25);
+
+                transition:
+                    background-color 0.2s ease,
+                    transform 0.2s ease,
+                    box-shadow 0.2s ease;
+            }
+
+            .home-button:hover {
+                background-color: #244732;
+
+                transform: translateY(-3px);
+
+                box-shadow: 0 8px 18px rgba(49, 92, 67, 0.3);
+            }
+
+            .home-button:active {
+                transform: translateY(0);
+
+                box-shadow: 0 3px 8px rgba(49, 92, 67, 0.2);
+            }
+
+            /* =========================
                SMART BITE
             ========================= */
 
@@ -603,7 +647,6 @@
             ========================= */
 
             @media (max-width: 700px) {
-
                 body {
                     padding: 15px;
                 }
@@ -658,41 +701,26 @@
                     gap: 5px;
                 }
             }
-
         </style>
     </head>
 
     <body>
-
         <main class="book">
-
             <!-- =====================================================
                  PAGE 1 — COVER
             ====================================================== -->
 
             <section class="page active" id="page0">
-
                 <div class="cover">
+                    <div class="cover-decoration top-left">🥬</div>
 
-                    <div class="cover-decoration top-left">
-                        🥬
-                    </div>
+                    <div class="cover-decoration top-right">🍎</div>
 
-                    <div class="cover-decoration top-right">
-                        🍎
-                    </div>
+                    <div class="cover-decoration bottom-left">🥕</div>
 
-                    <div class="cover-decoration bottom-left">
-                        🥕
-                    </div>
+                    <div class="cover-decoration bottom-right">🍓</div>
 
-                    <div class="cover-decoration bottom-right">
-                        🍓
-                    </div>
-
-                    <p class="cover-small">
-                        WHY
-                    </p>
+                    <p class="cover-small">WHY</p>
 
                     <h1 class="cover-title">
                         HEALTHY<br />
@@ -701,9 +729,7 @@
 
                     <br />
 
-                    <p class="cover-small">
-                        ARE IMPORTANT
-                    </p>
+                    <p class="cover-small">ARE IMPORTANT</p>
 
                     <div class="cover-line"></div>
 
@@ -712,532 +738,290 @@
                         Smarter eating.
                     </p>
 
-                    <div class="cover-bowl">
-                        🥗
-                    </div>
+                    <div class="cover-bowl">🥗</div>
 
-                    <p class="cover-group">
-                        CAPSTONE • GROUP 5
-                    </p>
-
+                    <p class="cover-group">CAPSTONE • GROUP 5</p>
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  PAGE 2 — INTRODUCTION
             ====================================================== -->
 
             <section class="page" id="page1">
-
                 <div class="page-header">
+                    <span class="page-category"> SMART BITES </span>
 
-                    <span class="page-category">
-                        SMART BITES
-                    </span>
-
-                    <h1>
-                        Why should we eat healthy food?
-                    </h1>
-
+                    <h1>Why should we eat healthy food?</h1>
                 </div>
 
                 <div class="page-content">
-
-                    <div class="illustration">
-                        🥗
-                    </div>
+                    <div class="illustration">🥗</div>
 
                     <div class="info-box">
-
-                        <h3>
-                            Real-Life Examples
-                        </h3>
+                        <h3>Real-Life Examples</h3>
 
                         <p>
-                            Eating healthy foods protects our body from
-                            sickness and viruses, and gives us energy
-                            throughout the day. It also helps our mind
-                            stay sharp.
+                            Eating healthy foods protects our body from sickness and viruses, and gives us energy
+                            throughout the day. It also helps our mind stay sharp.
                         </p>
-
                     </div>
-
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  PAGE 3 — HEALTHY FOODS
             ====================================================== -->
 
             <section class="page" id="page2">
-
                 <div class="page-header">
+                    <span class="page-category"> HEALTHY FOODS </span>
 
-                    <span class="page-category">
-                        HEALTHY FOODS
-                    </span>
-
-                    <h1>
-                        Some Smart Choices
-                    </h1>
-
+                    <h1>Some Smart Choices</h1>
                 </div>
 
                 <div class="food-grid">
-
                     <div class="food-item">
+                        <div class="food-icon">🥦</div>
 
-                        <div class="food-icon">
-                            🥦
-                        </div>
+                        <h3>Vegetables</h3>
 
-                        <h3>
-                            Vegetables
-                        </h3>
-
-                        <p>
-                            Vegetables can provide many important nutrients.
-                        </p>
-
+                        <p>Vegetables can provide many important nutrients.</p>
                     </div>
 
-
                     <div class="food-item">
+                        <div class="food-icon">🍎</div>
 
-                        <div class="food-icon">
-                            🍎
-                        </div>
+                        <h3>Fruits</h3>
 
-                        <h3>
-                            Fruits
-                        </h3>
-
-                        <p>
-                            Fruits provide vitamins, minerals,
-                            and other nutrients.
-                        </p>
-
+                        <p>Fruits provide vitamins, minerals, and other nutrients.</p>
                     </div>
 
-
                     <div class="food-item">
+                        <div class="food-icon">🌾</div>
 
-                        <div class="food-icon">
-                            🌾
-                        </div>
+                        <h3>Whole Grains</h3>
 
-                        <h3>
-                            Whole Grains
-                        </h3>
-
-                        <p>
-                            Whole grains can provide carbohydrates and fiber.
-                        </p>
-
+                        <p>Whole grains can provide carbohydrates and fiber.</p>
                     </div>
-
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  PAGE 4 — UNHEALTHY FOODS
             ====================================================== -->
 
             <section class="page" id="page3">
-
                 <div class="page-header">
+                    <span class="page-category"> UNHEALTHY FOODS </span>
 
-                    <span class="page-category">
-                        UNHEALTHY FOODS
-                    </span>
-
-                    <h1>
-                        Some Unhealthy Examples
-                    </h1>
-
+                    <h1>Some Unhealthy Examples</h1>
                 </div>
 
                 <div class="food-grid">
-
                     <div class="food-item">
+                        <div class="food-icon">🍟</div>
 
-                        <div class="food-icon">
-                            🍟
-                        </div>
+                        <h3>Fast Food</h3>
 
-                        <h3>
-                            Fast Food
-                        </h3>
-
-                        <p>
-                            Fast foods contain lots of fats and calories.
-                        </p>
-
+                        <p>Fast foods contain lots of fats and calories.</p>
                     </div>
 
-
                     <div class="food-item">
+                        <div class="food-icon">🍬</div>
 
-                        <div class="food-icon">
-                            🍬
-                        </div>
+                        <h3>Candy/sweets</h3>
 
-                        <h3>
-                            Candy/sweets
-                        </h3>
-
-                        <p>
-                            Candies have a lot of sugar that is not
-                            good for the body.
-                        </p>
-
+                        <p>Candies have a lot of sugar that is not good for the body.</p>
                     </div>
 
-
                     <div class="food-item">
+                        <div class="food-icon">🥤</div>
 
-                        <div class="food-icon">
-                            🥤
-                        </div>
+                        <h3>Soft Drinks/Soda</h3>
 
-                        <h3>
-                            Soft Drinks/Soda
-                        </h3>
-
-                        <p>
-                            Such as candies, soda has a lot of sugar in them.
-                        </p>
-
+                        <p>Such as candies, soda has a lot of sugar in them.</p>
                     </div>
-
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  PAGE 5 — SMART BITE
             ====================================================== -->
 
             <section class="page" id="page4">
-
                 <div class="smart-bite">
+                    <div class="smart-bite-icon">💡</div>
 
-                    <div class="smart-bite-icon">
-                        💡
-                    </div>
+                    <span> SMART BITE </span>
 
-                    <span>
-                        SMART BITE
-                    </span>
-
-                    <h1>
-                        Did You Know?
-                    </h1>
+                    <h1>Did You Know?</h1>
 
                     <p>
-                        A healthy diet protects against malnutrition
-                        and diseases. Also, Carrots were originally
-                        purple or yellow, not orange.
+                        A healthy diet protects against malnutrition and diseases. Also, Carrots were originally purple
+                        or yellow, not orange.
                     </p>
-
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  PAGE 6 — RECAP
             ====================================================== -->
 
             <section class="page" id="page5">
-
                 <div class="page-header">
+                    <span class="page-category"> QUICK RECAP </span>
 
-                    <span class="page-category">
-                        QUICK RECAP
-                    </span>
-
-                    <h1>
-                        What Did We Learn?
-                    </h1>
-
+                    <h1>What Did We Learn?</h1>
                 </div>
 
                 <div class="page-content">
-
                     <div class="info-box">
+                        <h3>🥦 Eat a variety of foods</h3>
 
-                        <h3>
-                            🥦 Eat a variety of foods
-                        </h3>
-
-                        <p>
-                            Different foods provide different nutrients.
-                        </p>
-
+                        <p>Different foods provide different nutrients.</p>
                     </div>
 
-
                     <div class="info-box">
-
-                        <h3>
-                            💧 Stay hydrated
-                        </h3>
+                        <h3>💧 Stay hydrated</h3>
 
                         <p>
-                            Water is important for many functions in
-                            the body. Soda is not a good alternative
-                            to water.
+                            Water is important for many functions in the body. Soda is not a good alternative to water.
                         </p>
-
                     </div>
-
 
                     <div class="info-box">
+                        <h3>💡 Make informed choices</h3>
 
-                        <h3>
-                            💡 Make informed choices
-                        </h3>
-
-                        <p>
-                            Learning about food can help you understand
-                            your everyday choices.
-                        </p>
-
+                        <p>Learning about food can help you understand your everyday choices.</p>
                     </div>
-
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  PAGE 7 — FOOD FACT OR FICTION
             ====================================================== -->
 
             <section class="page" id="page6">
-
                 <div class="page-header">
+                    <span class="page-category"> TEST YOUR KNOWLEDGE </span>
 
-                    <span class="page-category">
-                        TEST YOUR KNOWLEDGE
-                    </span>
-
-                    <h1>
-                        Food Fact or Fiction?
-                    </h1>
-
+                    <h1>Food Fact or Fiction?</h1>
                 </div>
-
 
                 <div class="quiz">
+                    <div class="quiz-icon">🧠</div>
 
-                    <div class="quiz-icon">
-                        🧠
-                    </div>
+                    <h2>Can you get it right?</h2>
 
-                    <h2>
-                        Can you get it right?
-                    </h2>
-
-                    <p class="quiz-question" id="quizQuestion">
-                        Fruits contain natural sugar.
-                    </p>
-
+                    <p class="quiz-question" id="quizQuestion">Fruits contain natural sugar.</p>
 
                     <div class="quiz-buttons">
+                        <button onclick="answerQuiz(true)">✓ FACT</button>
 
-                        <button onclick="answerQuiz(true)">
-                            ✓ FACT
-                        </button>
-
-                        <button onclick="answerQuiz(false)">
-                            ✕ FICTION
-                        </button>
-
+                        <button onclick="answerQuiz(false)">✕ FICTION</button>
                     </div>
 
+                    <div class="quiz-result" id="quizResult"></div>
 
-                    <div
-                        class="quiz-result"
-                        id="quizResult"
-                    ></div>
+                    <button class="quiz-next" id="quizNext" onclick="nextQuestion()">Next Question →</button>
 
+                    <div class="quiz-score" id="quizScore">Score: 0 / 1</div>
+                    <br />
 
-                    <button
-                        class="quiz-next"
-                        id="quizNext"
-                        onclick="nextQuestion()"
-                    >
-                        Next Question →
-                    </button>
-
-
-                    <div
-                        class="quiz-score"
-                        id="quizScore"
-                    >
-                        Score: 0 / 1
-                    </div>
-
+                    <a href="index.html" class="home-button"> 🏠 Back to Home </a>
                 </div>
-
             </section>
-
 
             <!-- =====================================================
                  NAVIGATION
             ====================================================== -->
 
             <div class="navigation">
-
-                <button onclick="previousPage()">
-                    ← Previous
-                </button>
+                <button onclick="previousPage()">← Previous</button>
 
                 <div class="page-number">
-
-                    <span id="currentPage">
-                        1
-                    </span>
+                    <span id="currentPage"> 1 </span>
 
                     /
 
-                    <span id="totalPages">
-                        7
-                    </span>
-
+                    <span id="totalPages"> 7 </span>
                 </div>
 
-                <button onclick="nextPage()">
-                    Next →
-                </button>
-
+                <button onclick="nextPage()">Next →</button>
             </div>
-
         </main>
-
 
         <!-- =========================================================
              JAVASCRIPT
         ========================================================== -->
 
         <script>
-
             /* =========================
                PAGE NAVIGATION
             ========================= */
 
             let currentPage = 0;
 
-            const pages =
-                document.querySelectorAll(".page");
+            const pages = document.querySelectorAll(".page");
 
-            const currentPageText =
-                document.getElementById("currentPage");
+            const currentPageText = document.getElementById("currentPage");
 
-            const totalPagesText =
-                document.getElementById("totalPages");
+            const totalPagesText = document.getElementById("totalPages");
 
-
-            totalPagesText.textContent =
-                pages.length;
-
+            totalPagesText.textContent = pages.length;
 
             function showPage(pageNumber) {
-
                 if (pageNumber < 0) {
-
                     pageNumber = 0;
-
                 }
-
 
                 if (pageNumber >= pages.length) {
-
                     pageNumber = pages.length - 1;
-
                 }
 
-
                 pages.forEach(function (page) {
-
                     page.classList.remove("active");
-
                 });
-
 
                 pages[pageNumber].classList.add("active");
 
-
-                currentPageText.textContent =
-                    pageNumber + 1;
+                currentPageText.textContent = pageNumber + 1;
 
                 currentPage = pageNumber;
 
-
                 window.scrollTo({
-
                     top: 0,
 
                     behavior: "smooth"
-
                 });
-
             }
-
 
             function nextPage() {
-
                 showPage(currentPage + 1);
-
             }
-
 
             function previousPage() {
-
                 showPage(currentPage - 1);
-
             }
 
-
-            document.addEventListener(
-                "keydown",
-                function (event) {
-
-                    if (event.key === "ArrowRight") {
-
-                        nextPage();
-
-                    }
-
-
-                    if (event.key === "ArrowLeft") {
-
-                        previousPage();
-
-                    }
-
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "ArrowRight") {
+                    nextPage();
                 }
-            );
 
+                if (event.key === "ArrowLeft") {
+                    previousPage();
+                }
+            });
 
             /* =========================
                FOOD QUIZ
             ========================= */
 
             const quizQuestions = [
-
                 {
-                    question:
-                        "Fruits contain natural sugar.",
+                    question: "Fruits contain natural sugar.",
 
                     answer: true,
 
@@ -1246,18 +1030,15 @@
                 },
 
                 {
-                    question:
-                        "Drinking water is important for the body.",
+                    question: "Drinking water is important for the body.",
 
                     answer: true,
 
-                    explanation:
-                        "Correct! Water is important for many functions in the body."
+                    explanation: "Correct! Water is important for many functions in the body."
                 },
 
                 {
-                    question:
-                        "Eating only one type of food gives your body every nutrient it needs.",
+                    question: "Eating only one type of food gives your body every nutrient it needs.",
 
                     answer: false,
 
@@ -1266,17 +1047,13 @@
                 },
 
                 {
-                    question:
-                        "Vegetables can provide important nutrients.",
+                    question: "Vegetables can provide important nutrients.",
 
                     answer: true,
 
-                    explanation:
-                        "Correct! Vegetables can provide many important nutrients."
+                    explanation: "Correct! Vegetables can provide many important nutrients."
                 }
-
             ];
-
 
             let quizQuestionNumber = 0;
 
@@ -1284,127 +1061,67 @@
 
             let quizAnswered = false;
 
-
             function answerQuiz(userAnswer) {
-
                 if (quizAnswered) {
-
                     return;
-
                 }
-
 
                 quizAnswered = true;
 
+                const question = quizQuestions[quizQuestionNumber];
 
-                const question =
-                    quizQuestions[quizQuestionNumber];
+                const result = document.getElementById("quizResult");
 
-
-                const result =
-                    document.getElementById("quizResult");
-
-                const nextButton =
-                    document.getElementById("quizNext");
-
+                const nextButton = document.getElementById("quizNext");
 
                 if (userAnswer === question.answer) {
-
                     quizScore++;
 
+                    result.textContent = "✅ Correct! " + question.explanation;
 
-                    result.textContent =
-                        "✅ Correct! " +
-                        question.explanation;
+                    result.style.backgroundColor = "#dcebdc";
+                } else {
+                    result.textContent = "❌ Not quite. " + question.explanation;
 
-                    result.style.backgroundColor =
-                        "#dcebdc";
-
+                    result.style.backgroundColor = "#ffe0e0";
                 }
-
-                else {
-
-                    result.textContent =
-                        "❌ Not quite. " +
-                        question.explanation;
-
-                    result.style.backgroundColor =
-                        "#ffe0e0";
-
-                }
-
 
                 result.classList.add("show");
 
-
                 nextButton.classList.add("show");
 
-
                 document.getElementById("quizScore").textContent =
-                    "Score: " +
-                    quizScore +
-                    " / " +
-                    (quizQuestionNumber + 1);
-
+                    "Score: " + quizScore + " / " + (quizQuestionNumber + 1);
             }
 
-
             function nextQuestion() {
-
                 quizQuestionNumber++;
 
-
                 if (quizQuestionNumber >= quizQuestions.length) {
-
                     showFinalScore();
 
                     return;
-
                 }
 
+                const question = quizQuestions[quizQuestionNumber];
 
-                const question =
-                    quizQuestions[quizQuestionNumber];
+                document.getElementById("quizQuestion").textContent = question.question;
 
+                document.getElementById("quizResult").classList.remove("show");
 
-                document.getElementById("quizQuestion").textContent =
-                    question.question;
+                document.getElementById("quizNext").classList.remove("show");
 
-
-                document.getElementById("quizResult").classList.remove(
-                    "show"
-                );
-
-
-                document.getElementById("quizNext").classList.remove(
-                    "show"
-                );
-
-
-                document.getElementById("quizScore").textContent =
-                    "Score: " +
-                    quizScore +
-                    " / " +
-                    quizQuestionNumber;
-
+                document.getElementById("quizScore").textContent = "Score: " + quizScore + " / " + quizQuestionNumber;
 
                 quizAnswered = false;
-
             }
 
-
             function showFinalScore() {
+                const result = document.getElementById("quizResult");
 
-                const result =
-                    document.getElementById("quizResult");
+                const nextButton = document.getElementById("quizNext");
 
-                const nextButton =
-                    document.getElementById("quizNext");
-
-
-                document.getElementById("quizQuestion").textContent =
-                    "🎉 Quiz complete!";
-
+                document.getElementById("quizQuestion").textContent = "🎉 Quiz complete!";
 
                 result.textContent =
                     "You scored " +
@@ -1413,24 +1130,15 @@
                     quizQuestions.length +
                     "! Thanks for testing your Smart Bites knowledge.";
 
-                result.style.backgroundColor =
-                    "#dcebdc";
+                result.style.backgroundColor = "#dcebdc";
 
                 result.classList.add("show");
 
-
                 nextButton.classList.remove("show");
 
-
                 document.getElementById("quizScore").textContent =
-                    "Final Score: " +
-                    quizScore +
-                    " / " +
-                    quizQuestions.length;
-
+                    "Final Score: " + quizScore + " / " + quizQuestions.length;
             }
-
         </script>
-
     </body>
 </html>
