@@ -427,6 +427,50 @@
             }
 
             /* =========================
+   HOME BUTTON
+========================= */
+
+            .home-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+
+                padding: 13px 25px;
+
+                background-color: #315c43;
+                color: white;
+
+                text-decoration: none;
+
+                border-radius: 12px;
+
+                font-size: 16px;
+                font-weight: bold;
+
+                box-shadow: 0 5px 12px rgba(49, 92, 67, 0.25);
+
+                transition:
+                    background-color 0.2s ease,
+                    transform 0.2s ease,
+                    box-shadow 0.2s ease;
+            }
+
+            .home-button:hover {
+                background-color: #244732;
+
+                transform: translateY(-3px);
+
+                box-shadow: 0 8px 18px rgba(49, 92, 67, 0.3);
+            }
+
+            .home-button:active {
+                transform: translateY(0);
+
+                box-shadow: 0 3px 8px rgba(49, 92, 67, 0.2);
+            }
+
+            /* =========================
                3-DAY STREAK
             ========================= */
 
@@ -993,13 +1037,7 @@
 
                     <br />
 
-                    <nav>
-                        <a
-                            href="index.html"
-                            style="background-color: #f4c95d; padding: 10px; display: inline-block; border-radius: 8px"
-                            >Home</a
-                        >
-                    </nav>
+                    <a href="index.html" class="home-button"> 🏠 Back to Home </a>
                 </div>
             </section>
 
