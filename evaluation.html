@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Evaluation | Smart Bites</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f3f1e8;
+            color: #26352b;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #315c43;
+            color: white;
+            padding: 25px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #f4c95d;
+        }
+
+        /* PAGE CONTENT */
+        .page-container {
+            max-width: 1050px;
+            margin: 55px auto;
+            padding: 0 25px;
+        }
+
+        .page-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .page-category {
+            color: #6b8f71;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        h1 {
+            color: #315c43;
+            font-size: 42px;
+            margin: 12px 0;
+        }
+
+        .page-heading p {
+            max-width: 650px;
+            margin: auto;
+            color: #59655c;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* FORM CARD */
+        .evaluation-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .evaluation-card h2 {
+            color: #315c43;
+            margin-bottom: 12px;
+        }
+
+        .evaluation-card > p {
+            color: #59655c;
+            line-height: 1.7;
+            margin-bottom: 22px;
+        }
+
+        .form-frame {
+            width: 100%;
+            height: 900px;
+            border: none;
+            border-radius: 12px;
+            background-color: #f3f1e8;
+        }
+
+        .open-form {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 22px;
+            background-color: #315c43;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .open-form:hover {
+            background-color: #244732;
+        }
+
+        .back-link {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0;
+            color: #315c43;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            color: #6b8f71;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 70px;
+            padding: 25px;
+            background-color: #24352a;
+            color: white;
+            text-align: center;
+        }
+
+        /* MOBILE */
+        @media (max-width: 800px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .page-container {
+                margin: 35px auto;
+                padding: 0 15px;
+            }
+
+            .evaluation-card {
+                padding: 18px;
+            }
+
+            .form-frame {
+                height: 850px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">✨ Smart Bites ✨</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#topics">Explore</a>
+            <a href="about.html">About</a>
+            <a href="evaluation.html" class="active">Evaluation</a>
+        </nav>
+    </header>
+
+    <!-- EVALUATION CONTENT -->
+    <main class="page-container">
+
+        <section class="page-heading">
+            <span class="page-category">YOUR FEEDBACK MATTERS</span>
+
+            <h1>Website Evaluation</h1>
+
+            <p>
+                Thank you for exploring Smart Bites!
+                Please answer our evaluation form to share your
+                thoughts about the website and help us improve it.
+            </p>
+        </section>
+
+        <section class="evaluation-card">
+            <h2>📝 Share Your Feedback</h2>
+
+            <p>
+                Please complete the form below. Your feedback will
+                help us understand your experience using Smart Bites.
+            </p>
+
+            <iframe
+                class="form-frame"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSfixIoUqAPU6eIBqZgugkBfz-y3JgPSRb4VmHw4Od_IA-ZJxQ/viewform?embedded=true"
+                title="Smart Bites Website Evaluation Form"
+                loading="lazy">
+                Loading evaluation form...
+            </iframe>
+
+            <a
+                class="open-form"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfixIoUqAPU6eIBqZgugkBfz-y3JgPSRb4VmHw4Od_IA-ZJxQ/viewform"
+                target="_blank"
+                rel="noopener noreferrer">
+                Open Form in a New Tab ↗
+            </a>
+        </section>
+
+        <a href="index.html" class="back-link">
+            ← Back to Smart Bites Home
+        </a>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Smart Bites | Eat better. Feel better.</p>
+    </footer>
+
+</body>
+</html>
