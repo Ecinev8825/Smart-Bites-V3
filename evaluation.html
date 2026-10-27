@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +8,16 @@
     <style>
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
+            margin: 0;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f3f1e8;
             color: #26352b;
-            min-height: 100vh;
         }
 
-        /* HEADER */
+        /* Header */
         header {
             background-color: #315c43;
             color: white;
@@ -40,151 +33,94 @@
         .logo {
             font-size: 28px;
             font-weight: bold;
-            white-space: nowrap;
-        }
-
-        /* NAVIGATION */
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 30px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0;
-            padding: 0;
-            font-size: 18px;
+            margin-left: 30px;
             font-weight: 600;
-            white-space: nowrap;
             transition: color 0.2s;
         }
 
-        nav a:hover,
-        nav a.active {
+        nav a:hover {
             color: #f4c95d;
         }
 
-        /* MAIN CONTENT */
-        main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 70px 30px;
-        }
-
-        .evaluation-intro {
-            max-width: 800px;
-            margin: 0 auto 35px;
+        /* Evaluation content */
+        .evaluation-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
             text-align: center;
-        }
-
-        .section-label {
-            color: #6b8f71;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
         }
 
         h1 {
             color: #315c43;
-            font-size: 46px;
-            margin: 15px 0;
+            margin-bottom: 15px;
         }
 
-        .evaluation-intro p {
-            color: #59655c;
-            font-size: 17px;
-            line-height: 1.7;
+        .description {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
         }
 
-        /* GOOGLE FORM */
-        .form-card {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
-        }
-
-        .form-card iframe {
-            display: block;
+        .form-container {
             width: 100%;
-            min-height: 900px;
-            border: 0;
+            overflow: hidden;
             border-radius: 10px;
             background-color: white;
         }
 
-        .form-fallback {
-            margin-top: 20px;
-            text-align: center;
-            color: #59655c;
-            line-height: 1.6;
+        iframe {
+            width: 100%;
+            height: 800px;
+            border: none;
         }
 
-        .form-fallback a {
+        .fallback-link {
+            margin-top: 20px;
+        }
+
+        .fallback-link a {
             color: #315c43;
             font-weight: bold;
         }
 
-        /* FOOTER */
         footer {
-            margin-top: 30px;
-            padding: 30px;
-            background-color: #24352a;
+            background-color: #315c43;
             color: white;
             text-align: center;
+            padding: 20px;
+            margin-top: 50px;
         }
 
-        /* TABLET */
-        @media (max-width: 800px) {
+        /* Smaller screens */
+        @media (max-width: 700px) {
             header {
+                padding: 20px 5%;
                 flex-direction: column;
                 gap: 15px;
             }
 
-            nav {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 16px;
-            }
-
-            main {
-                padding: 50px 20px;
-            }
-
-            h1 {
-                font-size: 38px;
-            }
-
-            .form-card {
-                padding: 10px;
-            }
-
-            .form-card iframe {
-                min-height: 850px;
-            }
-        }
-
-        /* MOBILE */
-        @media (max-width: 500px) {
             .logo {
                 font-size: 24px;
             }
 
             nav {
-                gap: 12px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
             }
 
             nav a {
-                font-size: 16px;
+                margin-left: 0;
             }
 
-            h1 {
-                font-size: 32px;
+            iframe {
+                height: 700px;
             }
         }
     </style>
@@ -192,7 +128,6 @@
 
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="logo">✨ Smart Bites ✨</div>
 
@@ -200,49 +135,41 @@
             <a href="index.html">Home</a>
             <a href="index.html#topics">Explore</a>
             <a href="about.html">About</a>
-            <a href="evaluation.html" class="active">Evaluation</a>
+            <a href="evaluation.html">Evaluation</a>
         </nav>
     </header>
 
-    <!-- PAGE CONTENT -->
-    <main>
-        <section class="evaluation-intro">
-            <span class="section-label">YOUR FEEDBACK MATTERS</span>
+    <main class="evaluation-container">
+        <h1>Website Evaluation</h1>
 
-            <h1>Evaluate Smart Bites</h1>
+        <p class="description">
+            Thank you for visiting Smart Bites!
+            Please answer our evaluation form to help us improve
+            the website and make it more useful for everyone.
+        </p>
 
-            <p>
-                Please share your feedback about Smart Bites.
-                Your responses can help us understand what works well
-                and what we can improve.
-            </p>
-        </section>
-
-        <!-- EMBEDDED GOOGLE FORM -->
-        <section class="form-card">
+        <div class="form-container">
             <iframe
                 src="https://docs.google.com/forms/d/e/1FAIpQLSfixIoUqAPU6eIBqZgugkBfz-y3JgPSRb4VmHw4Od_IA-ZJxQ/viewform?embedded=true"
-                title="Smart Bites Evaluation Form"
-                loading="lazy">
-                Loading evaluation form...
+                title="Smart Bites Evaluation Form">
+                Loading…
             </iframe>
+        </div>
 
-            <p class="form-fallback">
-                If the form does not appear,
-                <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfixIoUqAPU6eIBqZgugkBfz-y3JgPSRb4VmHw4Od_IA-ZJxQ/viewform"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    open the evaluation form here
-                </a>.
-            </p>
-        </section>
+        <p class="fallback-link">
+            If the form doesn't appear,
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfixIoUqAPU6eIBqZgugkBfz-y3JgPSRb4VmHw4Od_IA-ZJxQ/viewform"
+               target="_blank"
+               rel="noopener noreferrer">
+                click here to open it
+            </a>.
+        </p>
     </main>
 
-    <!-- FOOTER -->
     <footer>
-        <p>© 2026 Smart Bites</p>
+        <p>© 2026 Smart Bites. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
+```
