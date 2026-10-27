@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Evaluation | Smart Bites</title>
 
     <style>
@@ -12,6 +11,10 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -29,25 +32,32 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo {
             font-size: 28px;
             font-weight: bold;
+            white-space: nowrap;
         }
 
+        /* NAVIGATION */
         nav {
             display: flex;
-            flex-wrap: wrap;
-            gap: 22px;
+            align-items: center;
+            gap: 30px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
             font-weight: 600;
+            white-space: nowrap;
             transition: color 0.2s;
         }
 
@@ -56,19 +66,20 @@
             color: #f4c95d;
         }
 
-        /* PAGE CONTENT */
-        .page-container {
-            max-width: 1050px;
-            margin: 55px auto;
-            padding: 0 25px;
+        /* MAIN CONTENT */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 70px 30px;
         }
 
-        .page-heading {
+        .evaluation-intro {
+            max-width: 800px;
+            margin: 0 auto 35px;
             text-align: center;
-            margin-bottom: 35px;
         }
 
-        .page-category {
+        .section-label {
             color: #6b8f71;
             font-size: 13px;
             font-weight: bold;
@@ -77,110 +88,103 @@
 
         h1 {
             color: #315c43;
-            font-size: 42px;
-            margin: 12px 0;
+            font-size: 46px;
+            margin: 15px 0;
         }
 
-        .page-heading p {
-            max-width: 650px;
-            margin: auto;
+        .evaluation-intro p {
             color: #59655c;
             font-size: 17px;
             line-height: 1.7;
         }
 
-        /* FORM CARD */
-        .evaluation-card {
+        /* GOOGLE FORM */
+        .form-card {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 20px;
             background-color: white;
-            padding: 30px;
-            border-radius: 22px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
         }
 
-        .evaluation-card h2 {
-            color: #315c43;
-            margin-bottom: 12px;
-        }
-
-        .evaluation-card > p {
-            color: #59655c;
-            line-height: 1.7;
-            margin-bottom: 22px;
-        }
-
-        .form-frame {
-            width: 100%;
-            height: 900px;
-            border: none;
-            border-radius: 12px;
-            background-color: #f3f1e8;
-        }
-
-        .open-form {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 13px 22px;
-            background-color: #315c43;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: background-color 0.2s;
-        }
-
-        .open-form:hover {
-            background-color: #244732;
-        }
-
-        .back-link {
+        .form-card iframe {
             display: block;
-            width: fit-content;
-            margin: 30px auto 0;
-            color: #315c43;
-            text-decoration: none;
-            font-weight: bold;
+            width: 100%;
+            min-height: 900px;
+            border: 0;
+            border-radius: 10px;
+            background-color: white;
         }
 
-        .back-link:hover {
-            color: #6b8f71;
+        .form-fallback {
+            margin-top: 20px;
+            text-align: center;
+            color: #59655c;
+            line-height: 1.6;
+        }
+
+        .form-fallback a {
+            color: #315c43;
+            font-weight: bold;
         }
 
         /* FOOTER */
         footer {
-            margin-top: 70px;
-            padding: 25px;
+            margin-top: 30px;
+            padding: 30px;
             background-color: #24352a;
             color: white;
             text-align: center;
         }
 
-        /* MOBILE */
+        /* TABLET */
         @media (max-width: 800px) {
             header {
                 flex-direction: column;
-                text-align: center;
-            }
-
-            nav {
-                justify-content: center;
                 gap: 15px;
             }
 
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+
+            main {
+                padding: 50px 20px;
+            }
+
             h1 {
-                font-size: 34px;
+                font-size: 38px;
             }
 
-            .page-container {
-                margin: 35px auto;
-                padding: 0 15px;
+            .form-card {
+                padding: 10px;
             }
 
-            .evaluation-card {
-                padding: 18px;
+            .form-card iframe {
+                min-height: 850px;
+            }
+        }
+
+        /* MOBILE */
+        @media (max-width: 500px) {
+            .logo {
+                font-size: 24px;
             }
 
-            .form-frame {
-                height: 850px;
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 32px;
             }
         }
     </style>
@@ -200,55 +204,44 @@
         </nav>
     </header>
 
-    <!-- EVALUATION CONTENT -->
-    <main class="page-container">
+    <!-- PAGE CONTENT -->
+    <main>
+        <section class="evaluation-intro">
+            <span class="section-label">YOUR FEEDBACK MATTERS</span>
 
-        <section class="page-heading">
-            <span class="page-category">YOUR FEEDBACK MATTERS</span>
-
-            <h1>Website Evaluation</h1>
+            <h1>Evaluate Smart Bites</h1>
 
             <p>
-                Thank you for exploring Smart Bites!
-                Please answer our evaluation form to share your
-                thoughts about the website and help us improve it.
+                Please share your feedback about Smart Bites.
+                Your responses can help us understand what works well
+                and what we can improve.
             </p>
         </section>
 
-        <section class="evaluation-card">
-            <h2>📝 Share Your Feedback</h2>
-
-            <p>
-                Please complete the form below. Your feedback will
-                help us understand your experience using Smart Bites.
-            </p>
-
+        <!-- EMBEDDED GOOGLE FORM -->
+        <section class="form-card">
             <iframe
-                class="form-frame"
                 src="https://docs.google.com/forms/d/e/1FAIpQLSfixIoUqAPU6eIBqZgugkBfz-y3JgPSRb4VmHw4Od_IA-ZJxQ/viewform?embedded=true"
-                title="Smart Bites Website Evaluation Form"
+                title="Smart Bites Evaluation Form"
                 loading="lazy">
                 Loading evaluation form...
             </iframe>
 
-            <a
-                class="open-form"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfixIoUqAPU6eIBqZgugkBfz-y3JgPSRb4VmHw4Od_IA-ZJxQ/viewform"
-                target="_blank"
-                rel="noopener noreferrer">
-                Open Form in a New Tab ↗
-            </a>
+            <p class="form-fallback">
+                If the form does not appear,
+                <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfixIoUqAPU6eIBqZgugkBfz-y3JgPSRb4VmHw4Od_IA-ZJxQ/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    open the evaluation form here
+                </a>.
+            </p>
         </section>
-
-        <a href="index.html" class="back-link">
-            ← Back to Smart Bites Home
-        </a>
-
     </main>
 
     <!-- FOOTER -->
     <footer>
-        <p>© 2026 Smart Bites | Eat better. Feel better.</p>
+        <p>© 2026 Smart Bites</p>
     </footer>
 
 </body>
