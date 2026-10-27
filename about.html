@@ -1,615 +1,381 @@
 <!doctype html>
 <html lang="en">
     <head>
-
         <meta charset="UTF-8" />
-
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>About | Smart Bites</title>
 
-
         <style>
-
             * {
                 box-sizing: border-box;
                 margin: 0;
                 padding: 0;
             }
 
-
             html {
                 scroll-behavior: smooth;
             }
 
-
             body {
-                font-family:
-                    "Segoe UI",
-                    Tahoma,
-                    Geneva,
-                    Verdana,
-                    sans-serif;
-
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
                 background-color: #f3f1e8;
-
                 color: #26352b;
             }
 
-
-            /* ================= HEADER ================= */
-
+            /* HEADER */
             header {
                 background-color: #315c43;
-
                 color: white;
-
                 padding: 25px 8%;
-
                 display: flex;
-
                 align-items: center;
-
                 justify-content: space-between;
-
                 position: sticky;
-
                 top: 0;
-
                 z-index: 100;
             }
 
-
             .logo {
                 font-size: 28px;
-
                 font-weight: bold;
             }
 
-
             nav a {
                 color: white;
-
                 text-decoration: none;
-
                 margin-left: 30px;
-
                 font-weight: 600;
-
                 transition: color 0.2s;
             }
-
 
             nav a:hover {
                 color: #f4c95d;
             }
 
-
-            /* ================= MAIN ================= */
-
+            /* MAIN */
             main {
                 max-width: 1200px;
-
                 margin: auto;
-
                 padding: 80px 30px;
             }
 
-
-            /* ================= INTRO ================= */
-
+            /* INTRO */
             .about-intro {
                 max-width: 800px;
-
                 margin: 0 auto 80px;
-
                 text-align: center;
             }
-
 
             .about-label {
                 color: #6b8f71;
-
                 font-size: 13px;
-
                 font-weight: bold;
-
                 letter-spacing: 3px;
             }
 
-
             .about-intro h1 {
                 color: #315c43;
-
                 font-size: 50px;
-
                 margin: 15px 0 20px;
             }
 
-
             .about-intro p {
                 color: #59655c;
-
                 font-size: 18px;
-
                 line-height: 1.7;
             }
 
-
-            /* ================= GOAL ================= */
-
+            /* GOAL */
             .goal {
                 background-color: #315c43;
-
                 color: white;
-
                 border-radius: 25px;
-
                 padding: 50px;
-
                 max-width: 900px;
-
                 margin: 0 auto 90px;
-
                 text-align: center;
             }
-
 
             .goal h2 {
                 font-size: 32px;
-
                 margin-bottom: 15px;
             }
 
-
             .goal p {
                 font-size: 18px;
-
                 line-height: 1.6;
             }
 
-
-            /* ================= TEAM ================= */
-
+            /* TEAM */
             .team-title {
                 text-align: center;
-
                 color: #315c43;
-
                 font-size: 38px;
-
                 margin-bottom: 40px;
             }
 
-
             .team-grid {
                 max-width: 1000px;
-
                 margin: auto;
-
                 display: grid;
-
-                grid-template-columns:
-                    repeat(3, 1fr);
-
+                grid-template-columns: repeat(3, minmax(0, 1fr));
                 gap: 25px;
             }
 
-
             .member {
                 background-color: white;
-
                 border-radius: 18px;
-
                 padding: 30px 20px;
-
                 text-align: center;
-
-                box-shadow:
-                    0 5px 18px
-                    rgba(0, 0, 0, 0.08);
-
+                box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
                 transition:
                     transform 0.2s,
                     box-shadow 0.2s;
             }
 
-
             .member:hover {
                 transform: translateY(-6px);
-
-                box-shadow:
-                    0 10px 25px
-                    rgba(0, 0, 0, 0.12);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
             }
 
-
+            /* TEAM MEMBER PHOTOS */
             .member-image {
-                width: 100px;
-
-                height: 100px;
-
+                width: 110px;
+                height: 110px;
                 margin: 0 auto 18px;
-
                 background-color: #dcebdc;
-
                 border-radius: 50%;
-
+                overflow: hidden;
                 display: flex;
-
                 align-items: center;
-
                 justify-content: center;
-
                 font-size: 45px;
             }
 
+            .member-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
 
             .member h3 {
                 color: #315c43;
-
                 margin-bottom: 7px;
-
                 font-size: 20px;
             }
 
-
             .member p {
                 color: #6b8f71;
-
                 font-size: 14px;
             }
 
-
-            /* ================= FOOTER ================= */
-
+            /* FOOTER */
             footer {
                 margin-top: 50px;
-
                 padding: 30px;
-
                 background-color: #24352a;
-
                 color: white;
-
                 text-align: center;
             }
 
-
-            /* ================= MOBILE ================= */
-
+            /* TABLET AND MOBILE */
             @media (max-width: 800px) {
-
                 header {
                     flex-direction: column;
-
                     gap: 15px;
                 }
 
+                nav {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 12px;
+                }
 
                 nav a {
                     margin: 0 8px;
                 }
 
+                main {
+                    padding: 55px 20px;
+                }
 
                 .about-intro h1 {
                     font-size: 40px;
                 }
 
+                .team-grid {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
 
+                .goal {
+                    padding: 35px 25px;
+                }
+            }
+
+            @media (max-width: 500px) {
                 .team-grid {
                     grid-template-columns: 1fr;
                 }
 
+                .logo {
+                    font-size: 24px;
+                }
+
+                .about-intro h1 {
+                    font-size: 34px;
+                }
+
+                .team-title {
+                    font-size: 32px;
+                }
             }
-
         </style>
-
     </head>
 
-
     <body>
-
-
-        <!-- ================= HEADER ================= -->
-
+        <!-- HEADER -->
         <header>
-
-            <div class="logo">
-                ✨ Smart Bites ✨
-            </div>
-
+            <div class="logo">✨ Smart Bites ✨</div>
 
             <nav>
-
-                <a href="index.html">
-                    Home
-                </a>
-
-
-                <a href="index.html#topics">
-                    Explore
-                </a>
-
-
-                <a href="about.html">
-                    About
-                </a>
-
-                <a href="evaluation.html">
-                    Evaluation
-                </a>
-
+                <a href="index.html">Home</a>
+                <a href="index.html#topics">Explore</a>
+                <a href="about.html">About</a>
             </nav>
-
         </header>
 
-
-
-        <!-- ================= CONTENT ================= -->
-
+        <!-- CONTENT -->
         <main>
-
-
-            <!-- ABOUT INTRO -->
-
             <section class="about-intro">
+                <span class="about-label">ABOUT SMART BITES</span>
 
-                <span class="about-label">
-                    ABOUT SMART BITES
-                </span>
-
-
-                <h1>
-                    What is Smart Bites?
-                </h1>
-
+                <h1>What is Smart Bites?</h1>
 
                 <p>
-                    Smart Bites was created to provide
-                    accessible information about healthy
-                    eating and help anyone understand how
-                    everyday food choices can affect their
-                    health in a way they can comprehend
-                    easier.
+                    Smart Bites was created to provide accessible information about healthy eating and help anyone
+                    understand how everyday food choices can affect their health in a way they can comprehend easier.
                 </p>
-
             </section>
-
-
 
             <!-- OUR GOAL -->
-
             <section class="goal">
+                <h2>Our Goal</h2>
 
-                <h2>
-                    Our Goal
-                </h2>
-
-
-                <p>
-                    We want to make information about
-                    healthy eating simple, understandable,
-                    and accessible.
-                </p>
-
+                <p>We want to make information about healthy eating simple, understandable, and accessible.</p>
             </section>
-
-
 
             <!-- OUR TEAM -->
-
             <section>
-
-                <h2 class="team-title">
-                    Meet the Team
-                </h2>
-
+                <h2 class="team-title">Meet the Team</h2>
 
                 <div class="team-grid">
-
-
                     <!-- MEMBER 1 -->
-
                     <div class="member">
-
                         <div class="member-image">
-                            👤
+                            <img
+                                src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AJGomAYf1fpo2zfluAnMpbctLhMERJhL3wRgnWxqLSj1PcLZPxZ5OMXtmjUL5VwI4MNQ2W5H%2FXwE%2F9vpHvrOsXJUNJuBQVE3Xd%2FAlsapnxHAwfbK0VstPONk%2FLGAkeL2wXv5MwFaVMKqH7OVqo5zq3FgmqHGnlqzS99AW0xS51AfVBNHTn8CAVzmzBo17ikRPfwEIgDAoGvIqkestaZOsIVPdemPODEWde9ZtLONQ%2BSLj0bofmc2WlOlCmz6%2FGxoqKH9TiCOPaXnajAd9SJftPtKN3W5iHuAQvykD1Xb3lXhbI04BQQ1mAw3ii4RRkHptYfhup%2B6KmOP1Jpm95wvSseqhy%2FbqIfoffp%2BRxEFpWcu6IdHXEgh0UowNHvW9w8wbk0dHl2HfmjNhbtipy1nKQgIn1Ih66u9ZK7VHWIgzI%2BQa5ZWaTh%2FWxrFYmWn6OWSxDk98Pd%2BzdDKTFRsxNMo0anFOIPEKmk2rJRdwPopEK6JnGNSrmQiHH3VlB09blLaw5uOOqFl7JvbMA%2B%2B6cxLHTJsBGU6fKJzc9QIUfDSv0OYqRLt%2B5U%2BWpzsOafLG271XJXonR%2BCff1xKefoJTYOe5Y4eivkxEP7lsL8fDqC3GK3xqD3D3wJ%2BTLrwJPGDk2B71q6dwl9veRj2fnEe1G%2FpxjecFHhvHAe4NQrUlrvdAM%2FInWn4kzH8w%3D%3D&allow_caching=true&sz=w512"
+                                alt="Jan Blaire Telmo" />
                         </div>
-
-                        <h3>
-                            Jan Blaire Telmo
-                        </h3>
-
-                        <p>
-                            Leader
-                        </p>
-
+                        <h3>Jan Blaire Telmo</h3>
+                        <p>Leader</p>
                     </div>
-
-
 
                     <!-- MEMBER 2 -->
-
                     <div class="member">
-
                         <div class="member-image">
-                            👤
+                            <img
+                                src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AJGomAY6zgUosAkesPq3DBlC86sz67cR%2BYHsVoV%2BQpJSRQcdfm5L8nxltczsP%2BOtxPXDt8n3taQxz%2Fbrg6Omp6IlZXNWhqSX1bROJDCvnaCbFdLQoshOXdij2sGn0usHpiu5%2BxHbq8AS9NXuodJpUXjgvAEkGHrat%2BPPM6LvdhssptFskbmvIZjRB%2BPMx71bl7gISJKXpZQjdOJurgfLc5KyLmtGzTWZxqSo765HcBrobAeDHHHlyyz8PlklRDBteGk8SSIVLS%2BQEDrLTjW%2FlrNjn49zJpXQKTIfv5pQOGTInViVEUoG72BuU8BEIqEdT%2BV%2FkU4SBk8kYJBzrMO1S01t0V9Ei50byB9s5uM3mHBbzSwXIiqmEs5EaV%2FHH9jR4DZzUVUVN3IlU%2FArs9BTNngBPDeBq0m3h%2FpfBZaRcYeTQLx9LxmfKuwn36I48kpUJslYn3pg8qonz%2BuyeMx3TslHm8w2yCpcVDxiP2F8kJ8eoEZH28cJUXjqWlnV8BNy19YZCyTqZ1n4jTCysYP4xNI5A99%2BfuVJ76P6d2lIpQZBw%2BXdvE4frUfXc347m%2FOzj0uva9DsdiTjEKjIhMbxNWAvDGcgHJeXanvHiOCaNAQCXgTlComL8RDHtTP%2FibqE7LOfMXsdgojU7bJXakRx%2BQJSmztaG%2FWH0Et4W0myeaAgKdi%2FAY5lpg%3D%3D&allow_caching=true&sz=w512"
+                                alt="Ysabella Marie Gener" />
                         </div>
-
-                        <h3>
-                            Ysabella Marie Gener
-                        </h3>
-
-                        <p>
-                            Co-Leader
-                        </p>
-
+                        <h3>Ysabella Marie Gener</h3>
+                        <p>Co-Leader</p>
                     </div>
-
-
 
                     <!-- MEMBER 3 -->
-
                     <div class="member">
-
                         <div class="member-image">
-                            👤
+                            <img
+                                src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fjpeg&attachment_token=AJGomAYdzeK6CZQUoaJ4r5s3nAuY%2FZXJ7JgMZ%2FfyA2jekV6nuiDpuDCgdkuN0zrFJsdMd74mzTYJInigHln3h%2FuLxYGMoiqiubPWvr0qkHuq7s%2FaDMo1lfMpDJMM2Jd%2Bt4y9CuEFZdBWh5GqWn1K5ihpbCiecqMdIGmhsnqSwyCNsGFlSZdAGl3Hyusno3TAXMqm22VK6GVBPLHhYz%2F8jNriPe7D0SKYU0UXo8ilvwZxRH4KeVDda0X51u9ZD9EsRAX%2BqIjKFs%2Bu5zUWiObETM8yR%2BWhI25jyJy6ZLfdfPIVZhSAsaFoYA1b32KDxz%2FSbsxTwIqVLB8prWy0Yq6WnoJJHTFpjQArUlDBwOuAbiF0gWbjv3NUW%2Frw1PJO6ik69RdeYpHanFB%2FBG9DiMhN4IrpJVuwxMnEM1iOX6UbluV71rZqH%2B0TtyP7z1HhEKLkUsZ8dM0%2ByWJJstzdHyU7gKtQzWcTenEzsAFjeP4TTSBSpkWFNiFgyl%2FwFVCC3lT%2FEuZru9VzeV4dzRHFjPEpbrQZfK%2FTokRkbmA8%2FClhqLCSyZRd30SE1m%2F45dSqMUMyM2wmMcaahUp5bnXkR3uB9dCPg3PWdDO5Tan7RXSDTaaMv39P%2B%2Fi3TflCId5xHI9H3LxqMZaY%2Ftz%2F999opjzIJK%2FSSHMAehbc2MhY7eJ4uCSmIvaPRZSwCgqnNOL%2FfcEn3j2jC6mo&allow_caching=true&sz=w512"
+                                alt="Kean Danielle Gonzales" />
                         </div>
-
-                        <h3>
-                            Kean Danielle Gonzales
-                        </h3>
-
-                        <p>
-                            Designer
-                        </p>
-
+                        <h3>Kean Danielle Gonzales</h3>
+                        <p>Designer</p>
                     </div>
-
-
 
                     <!-- MEMBER 4 -->
-
                     <div class="member">
-
                         <div class="member-image">
-                            👤
+                            <img
+                                src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AJGomAYf%2F%2B0YyiFCV1bsLHjvXOpnL5iUNm7dzOdNd0mas2cbeZ4i7Y5xj%2BUTwZZR74QtHf%2BDo%2FmyOyEEfRd4cCE%2BaDvNzS8KOBBEZy3vM3T4E5Q2leNsmQk0CYUoAVOpl1TnfcKx2qqscRW1HqO5VY44hoyBydvSoeKws4qZMfuMle2ymyZUlV%2BfLJRsofJ3NeEzmP42idMNmn4MDMWFzDxT8iPJcLKRiWtshCeDtOwSMWM1dKQzO7%2FEaAiecRInqKreka3XbgxyMTcVZ%2FSJ0Qx6eeCbF4CP4zcN2c2d4zxy94sUJfEKm7l930NumT1BWJSUWzgO8JZ36DC7PsyBgQWNyz8RI3z%2B1PBHWG4q1B1xLDmbtiBIOBQOQEa2VgBnlEIqRdlqydAT1x3llc%2FYfR52%2F1WxGpdTwWytO4HH8LKChe%2Bp%2BE8oUj2IOw1GnTU5x3tcHKXrhpNJCejTIY2O%2BeC81NQ4UV1D7dqqK%2FlXsrhS3n3yzJrH845PPEdExG1BrjJUc7pUqMJLCJn3682aq%2BeC%2Fxggyz4A6WHfQvhr0oY80L%2FdIRD9WeMvZ5mZJX31v3UJp%2BGGF3OSd%2F4BlUvFHyK1CdrBPjbJONI7vrpD7NFUMsshlKIeIlY%2Buwe1M1OFhgScIMMGq56nfHfu1mBpydSb8fo4Ns3k1os5hE0Gzc6aDkhLC%2FEdAmI%3D&allow_caching=true&sz=w512"
+                                alt="Elthia Ryce Villanueva" />
                         </div>
-
-                        <h3>
-                            Elthia Ryce Villanueva
-                        </h3>
-
-                        <p>
-                            Designer
-                        </p>
-
+                        <h3>Elthia Ryce Villanueva</h3>
+                        <p>Designer</p>
                     </div>
-
-
 
                     <!-- MEMBER 5 -->
-
                     <div class="member">
-
                         <div class="member-image">
-                            👤
+                            <img
+                                src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AJGomAZRrn0ILNpeAcT9epv3d8qcY6ka2qqBk4a6gbGPYHc%2BxjzlVHbmiOeq65g8yH%2Bu%2BztLzA1PChj3dgP619cSNjMR7E%2B7eFZJzXsPJOLYv07Z6CGoAT84m%2Flz%2FweYyewmqMG1dbs%2FTZIAWARSiQVHekqqtbF4dreorjYr%2FSiwC3lnb3e5GwABZRWD6HucKp3XcRh2PQwq3f2bxbzmUo%2F9D7AUtQ%2BKxRXNJxw8PlBXBsggtpdVBDgNsGbrzmvi0NnZ3e%2Bhq3aGbd8EZB4diJ1Rs%2FhS3mVLpABTqfFXcHMMrCcQsIS%2BNt61AWQ5J0iw8xOXs0rd7%2BhNp4ohgvq%2ByoLRsor3VOrRMfptzgWAVNuu8iv31hqFBGsmDgujDhUmYS5zC0kwQaifjEQtPwJDci3eA6wSjNjshGq4meaJ8shH6QFisycJ3nzvLKY0ul9TtZeL%2FJTBY9yl4zuI8EOPgwgNL5NmpjGeExX256PzwcZbdd%2FYEihFKdrOwDt4Z%2Fbl%2FcNJHtBEz6djEZL89%2BH2G%2FxVsTjDmAsUwzPzzwMhDXdAGzsB0R%2FdrtfLu%2B5z1i9CDMN5hNK46Ygt%2FPFRi9V8FdX%2F%2FsmtKkbD%2Fstw5EkX2tVBcO17S9N12cuV9MUjCBKacnAwkIgM1wKgJww30z3BA73ZqRLTPy8jNHJ7I0mXSscgk5A2qqq10pw%3D&allow_caching=true&sz=w512"
+                                alt="Venice Santuyo" />
                         </div>
-
-                        <h3>
-                            Venice Santuyo
-                        </h3>
-
-                        <p>
-                            Developer
-                        </p>
-
+                        <h3>Venice Santuyo</h3>
+                        <p>Developer</p>
                     </div>
-
-
 
                     <!-- MEMBER 6 -->
-
                     <div class="member">
-
                         <div class="member-image">
-                            👤
+                            <img
+                                src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AJGomAbBQCWYGKLwDIUho0%2FjeLsKwshUIkium81Qz%2B%2BLCOCaXbL3JQlyb0DzVvnXslBbd%2BbtaH67q5TK9aMuHTyWAsXb%2FPEk03qAHO9CtoQ3U5IVIN1EkLDPWju%2B%2FxThKpxsGjVVVdXsrqyNAeznqrAc6rWizOYAg3MjlcSAT9iSNR7wmnTryyF4wC4lQgYw4RUA392FofOZT3dkl295C6YxbU66775maD0dhWcO2KOcTUSehFFg9HBvuCSJ9mWTEDN3ljP6d4laJUIBxZS%2FehHPrAQBXpbCYCsBhHnvpjPKoramQIdx%2B09XsRjzcInDCTDs%2FQDe%2F%2BZjM2xeOsWZKp4Yfw0r2Eocy0xV4oHYRaJYIUqigCTG%2Bs77686xU%2FwvvVpWp9KpPqUDDFdKfIiqJQkbY7%2BD6sj3ie95cijRxn7kfk8bUNOJz8tE0swwlDkKyzYj%2BAZkzZ7kp4Y3HLrW6NHTwDq5NO%2FftjeuaNkzkybcgT0rmfynXfXgqlVsHLx0IwdCQhPrf0l4RjtApoYGP8dMCqbxOmlOzDfT03qNUH8RUuRYSaA83BGcD7Yc1Hea7Dieln3FMAm6%2FZghxwuJuU6zvPJvyrfxBJJwWcdHOibmIZFIyKU4AwtcNgAAgf60YRjjAn%2BtQAg5TWvoSykblMwiq2zi8MueaE6n3bnjqx%2FxM%2FtR2zkbB8c%3D&allow_caching=true&sz=w512"
+                                alt="Justine Jhane Obales" />
                         </div>
-
-                        <h3>
-                            Justine Jhane Obales
-                        </h3>
-
-                        <p>
-                            Researcher 
-                        </p>
-
+                        <h3>Justine Jhane Obales</h3>
+                        <p>Researcher</p>
                     </div>
-
-
 
                     <!-- MEMBER 7 -->
-
                     <div class="member">
-
                         <div class="member-image">
-                            👤
+                            <img
+                                src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AJGomAb6dTh8YnC%2F7yWobj6or68KHgfCrnCAymI81xMBA1v8510aha7npB3RLVCgldKw9mT2ziBDkgBRrlR5KTNdPxKkdvzTlB5JDzKfKU%2BrnG6gHCIIiVEUVbtvMKrZBwkUNf1tSAT08bn%2F6e7btsKEU5o3CNLK%2B84xklxoF8Ull1hxyY%2FKqHftLhDCP1KrPy3nzcFD5aUc0B48Bee%2F5Aciqdto0c36ELJ7am%2BA%2FIxhk%2FX1zD1GhHERK961LyQq2QD08tBWxnklYnjjyYcIFBfxOIXTOEzq95X54oYICCofA1dEQzxTKFid3utlnTh5DIVGauZHq6t%2B%2BzLd78ASwKgk3UK8zbffvny8izSP7w4bilOcGRgsUCW7mf%2BT20ryXfwIFQlqWcOnvRz36%2Fqk8UNhmBJ5zPVHAUSYYRKmMFe9YRkxyWjRi3Y81q9w4NHVWsllmPHsabg5irOZJzCZI11ESTwRlDSlWjAlgrIMwPByqGRJfnCO1AIjWo9nctnpn2gA3ZEqsATtcZFyj3Cv%2B3n1aNTWv47BeVhYxvJKnSxBdVcxJp7zHh2cHfixRw1tTkYr1z1E1rNsqUE42yBKpPPEbKBbrzvMmbLLlTet9M7IY5EhudkZ2GIq1aZuRw5Y8XJKT%2F7VqHJMj2aA3wAoVItyD4MEF2WGHyebDZaEXMt3whnriWM07A%3D%3D&allow_caching=true&sz=w512"
+                                alt="Ethan Zachary De Castro" />
                         </div>
-
-                        <h3>
-                           Ethan Zachary De Castro
-                        </h3>
-
-                        <p>
-                            Researcher 
-                        </p>
-
+                        <h3>Ethan Zachary De Castro</h3>
+                        <p>Researcher</p>
                     </div>
-
-
 
                     <!-- MEMBER 8 -->
-
                     <div class="member">
-
                         <div class="member-image">
-                            👤
+                            <img
+                                src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AJGomAZvznX7uqQPSc58m36OUoWmBoznuPN%2BMpkjB%2FxsaaZ39uL93F%2FCdTTybNOo2XpKqAIyDEqyAVF9LGHvQOtkZM5lWqHD3%2Fy8uem1KMjX57EOEMJqNYWEsOwtDep6qSQGdB%2FP%2Fk0%2F8dZVV3LyRjEv9NrLaEz7LGy6MhFx9s6SjBxqAIA6Z6C%2ByefDRKdaEv%2BoGmDoL78EaR3YPMJbgPLlz%2F1mmJzLeef4GoB%2BmqLHMIIhQdcPqR4%2FIF0Liz8ZBaepxcRZy%2B33eryxWwsKW89bM5vxdyS9jcSR3SaN5EZZDi5uIxhl656J%2BHtuSoaB2iTnsKLL1Pi5ebqZiMvDVXEsOxBbuxvQZwWqo9R8nt1Rr6xRF0xV%2BLu%2FTKARhTRWe0cWm9GK5L6dT7axcjeiYclalXyy6K8AFh%2BqIqHHpHO2TMcoDM1W560zSiYxyK%2FzQeHmaurZGafrtI6PKFMauSxLR4gLlDOSbDNSIPuF7o%2BsWBQbXWBNINvUt9UxHIdNGKICbOknKcBpTWyFxVh7qrJwTa1a6XmkarEr%2FPlm11aGb4Q0N%2BXZituk5YJwQkNB6NPYOqQjocX2OKMk%2FLwdO6S3NL17BL0RUwn%2FGrcASJjn0NbsHc84JK7XPnhazdd%2BB0aAZrATLq5r9q3OGSnaOlH34Pl4x9MfsVgQThxpc3mnWBnjems4ow%3D%3D&allow_caching=true&sz=w512"
+                                alt="Queyan Recio" />
                         </div>
-
-                        <h3>
-                            Queyan Recio
-                        </h3>
-
-                        <p>
-                            Tester
-                        </p>
-
+                        <h3>Queyan Recio</h3>
+                        <p>Tester</p>
                     </div>
-
-
 
                     <!-- MEMBER 9 -->
-
                     <div class="member">
-
                         <div class="member-image">
-                            👤
+                            <img
+                                src="https://chat.google.com/u/0/api/get_attachment_url?url_type=FIFE_URL&content_type=image%2Fpng&attachment_token=AJGomAbwP8t5JlhpvYnckm0BNLtSsGV6bFAo2zPiDyw2j48LtEjtQnkqcTyimqBZ8B3oTrZm1ZworJUMlIAzy9l6bxY%2Fv%2BHiTO00Xf%2FZA7CvN%2FZ8wtyyJbsiDXTOR3CjnronAUYNCjVyI7%2B1HOFo8egdRGPp3oh1q4e2R2u5nnQbAhbKOvS5hJ7JGSgVqkTW4kHuSV7uLY3J5MkVWaKuFY7q9pAd10W%2B8WdIbTYEF3HFePea5X%2FDHXya1t32UL%2FKKuPwT%2BE%2FrKuCGuXUqNmGpMb9QsHdSjMMGELz2lmaZ9Dz2G314jsH9BBZLo%2FS7ULiuAJTbsHBxK%2BSe2jSnd8jj6mNh0eK99pMcMan1g1kgOCUig4lDRxEAb%2FA8t1fSGxs65%2Fg0VsOxMt8r8RIzEzLrXIB5qL6BgaFRVzzwnqASGHwwSGOLfN9M7b0CrRJ7ovd8VT6EXV9d3hHc74C8%2F%2B%2Be4LM13r4tG536pB2ZFkTlE07j%2FTgmvfBxu%2BeISu8hlUy7vLs2WIfNTPM3gBoegtmq6YRS4zVBz%2FOQQPhwG9awnzgNCXuSVphT%2BcGMb8SbgEp6ZIlecLuQ9s8psO00KLXyvueVr%2ByUYNLHDndKAAq37RWSlzeDVL1001Y%2BDHCbsliRUemMM786vHYoCeBOGJAXjAhUMkYwobdqkPw54xnFpg05Pa2jB124hk%3D&allow_caching=true&sz=w512"
+                                alt="Kirsten Freya Cruz" />
                         </div>
-
-                        <h3>
-                            Kirsten Freya Cruz
-                        </h3>
-
-                        <p>
-                            Tester
-                        </p>
-
+                        <h3>Kirsten Freya Cruz</h3>
+                        <p>Tester</p>
                     </div>
-
-
                 </div>
-
             </section>
-
-
         </main>
 
-
-
-        <!-- ================= FOOTER ================= -->
-
+        <!-- FOOTER -->
         <footer>
-
-            <p>
-                © 2026 Smart Bites
-            </p>
-
+            <p>© 2026 Smart Bites</p>
         </footer>
-
-
     </body>
 </html>
